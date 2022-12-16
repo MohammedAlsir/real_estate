@@ -128,4 +128,21 @@ class ParcelController extends Controller
             return $this->returnMessage(false, 'هذه الارض غير موجودة', 200);
         }
     }
+
+    // delete Parcel
+    public function delete_parcels($id)
+    {
+        $parcel =  Parcel::find($id);
+
+        if ($parcel) {
+            if ($parcel->user_id == Auth::user()->id) {
+                $parcel->delete();
+                return $this->returnMessage(false, 'تم حذف الارض  ', 200);
+            } else {
+                return $this->returnMessage(false, 'هذه الارض غير موجودة', 200);
+            }
+        } else {
+            return $this->returnMessage(false, 'هذه الارض غير موجودة', 200);
+        }
+    }
 }

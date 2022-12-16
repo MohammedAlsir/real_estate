@@ -37,6 +37,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
         Route::post('parcel/create', 'ParcelController@create_parcels'); // == create Parcel ==
         Route::post('parcel/{id}/edit', 'ParcelController@edit_parcels'); // == edit Parcel ==
         Route::get('parcel/{id}/show', 'ParcelController@show_parcels'); // == show Parcel ==
+        Route::delete('parcel/{id}/delete', 'ParcelController@delete_parcels'); // == dElete  Parcel ==
 
     });
 
