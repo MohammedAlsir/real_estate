@@ -24,6 +24,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
     Route::get('space/type', 'GetController@get_space_type'); // == get space type==
     Route::get('states', 'GetController@get_state'); // == get all State ==
     Route::get('state/{id}/cities', 'GetController@get_cities'); // == get all cities by state id ==
+
+    Route::get('parcels/catigories', 'GetController@get_parcels_category'); // == get space type==
+    Route::get('parcels/type', 'GetController@get_parcels_type'); // == get space type==
+
+
     Route::post('parcels', 'GetController@get_parcels'); // == get all parcels ==
 
 

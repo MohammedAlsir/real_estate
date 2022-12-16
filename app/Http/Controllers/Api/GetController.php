@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\City;
 use App\Models\Hotel;
 use App\Models\Parcel;
+use App\Models\ParcelCategory;
+use App\Models\ParcelType;
 use App\Models\SpaceType;
 use App\Models\State;
 use App\Traits\ApiMessage;
@@ -20,6 +22,18 @@ class GetController extends Controller
     {
         $space_type = SpaceType::orderBy('id', 'DESC')->get();
         return $this->returnData('space_type', $space_type);
+    }
+
+    public function get_parcels_category() // Get Space Type
+    {
+        $parcels_category = ParcelCategory::orderBy('id', 'DESC')->get();
+        return $this->returnData('parcels_category', $parcels_category);
+    }
+
+    public function get_parcels_type() // Get Space Type
+    {
+        $parcels_type = ParcelType::orderBy('id', 'DESC')->get();
+        return $this->returnData('parcels_type', $parcels_type);
     }
 
     public function get_state() // Get All State
