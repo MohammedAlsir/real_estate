@@ -38,4 +38,22 @@ trait ApiMessage
             $key        => $value,
         ], $status_code);
     }
+
+
+    /**
+        == دالة إرجاع البيانات
+        ==
+        == $status        =>    الحالة (true Or false)
+        == $message       =>    الرسالة
+        == $status_code   =>    رقم حالة الخطأ
+        ==
+     */
+    public function returnDataWithOutToken($key, $value,  $message = "", $status_code = "200")
+    {
+        return response()->json([
+            'status'    => true,
+            'message'   => $message,
+            $key        => $value,
+        ], $status_code);
+    }
 }

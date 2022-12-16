@@ -25,7 +25,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "Mohammed12",
+							"value": "Mohammed",
 							"type": "default"
 						},
 						{
@@ -55,7 +55,7 @@
 			"response": []
 		},
 		{
-			"name": "profile",
+			"name": "profile url for logo uploads/agents/logo/",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -388,6 +388,320 @@
 						"api",
 						"v1",
 						"parcels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create parcels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzg0MGE2MDE1NzA2ZWQ3ZWJlYTc3ZGY5NWIzZTUwODk5NWM1MTI0N2ZmZjA4OWVhYmY0MmJjMDg4OWFiZTYwZjIzYjg2NjIwOTkzOGIzNzAiLCJpYXQiOjE2NzExNzQzNjYuNDgyNDksIm5iZiI6MTY3MTE3NDM2Ni40ODI0OTYsImV4cCI6MTcwMjcxMDM2Ni4yNjMxMjgsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.sZY_ClK-C35y9hs0Qj59WEmrkJQwKzg48iHtZkbBV4u_dyTatHeP16ICNF7Q_kSiXXFdQHz0OSluFMGTy2I6ctNNVUNWI4kYVMjOqKErnPNY6eYt2HFJZ5Vx5jIW3giUQ2HP3COqsY587ROFJSKjQJ3rZY2w7v13y6wxcOQEWPWNPgLifj5ghxMaxVG78yWJ_-TXgrP4y04xj2BFAkj3e_6cqEw3iiiD0mU5vsWDCCa4i7hEOytLiVHhtMgilujcvImgPRZ0m8S7zlBgM5savs7cgD-XU-nqSapOghGDA2b6TWX5jmtlQS4v0jrppMB0rxxxZkwsItknf0TQhnG0dft59Fvx-kER3g1bYgpIGllnoEg8khX5rcnNucIspQxHMBp6gdpeBGIXBWg3Jo3Cdizl_F6qsJbKWCDxPqHQw2BN2QfZ7a4Mz4JJlx50OXu8eM9FGXzDX1T6Muh2vgwXby0RfxSy4ZRtlzZRi5rlXv-HvJjO1GaAO69X30GzDHALYM3OakdvVMflmGwNGzwaIUPZBeF1oYHjVSaxVLCc9coq7_JTPxT1JuouzlE1uI3CdCMpGZ0LOIWN4PRlH_hmo1f4ArnEBvzs6bi423jN3K8WCb7eCQOp2W15sq1W2M4xf123-93puU0cSLkMpj1fpa_o8I8QZDNHy2LTY84ttKk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "parcel_type_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "parcel_category_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "square",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "neighborhood",
+							"value": "77",
+							"type": "default"
+						},
+						{
+							"key": "parcels_number",
+							"value": "789",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "100",
+							"type": "default"
+						},
+						{
+							"key": "features",
+							"value": "**",
+							"type": "default"
+						},
+						{
+							"key": "space",
+							"value": "500",
+							"type": "default"
+						},
+						{
+							"key": "space_type_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "degree",
+							"value": "10",
+							"type": "default"
+						},
+						{
+							"key": "city",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "state",
+							"value": "2",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/parcel/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"parcel",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit parcels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzg0MGE2MDE1NzA2ZWQ3ZWJlYTc3ZGY5NWIzZTUwODk5NWM1MTI0N2ZmZjA4OWVhYmY0MmJjMDg4OWFiZTYwZjIzYjg2NjIwOTkzOGIzNzAiLCJpYXQiOjE2NzExNzQzNjYuNDgyNDksIm5iZiI6MTY3MTE3NDM2Ni40ODI0OTYsImV4cCI6MTcwMjcxMDM2Ni4yNjMxMjgsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.sZY_ClK-C35y9hs0Qj59WEmrkJQwKzg48iHtZkbBV4u_dyTatHeP16ICNF7Q_kSiXXFdQHz0OSluFMGTy2I6ctNNVUNWI4kYVMjOqKErnPNY6eYt2HFJZ5Vx5jIW3giUQ2HP3COqsY587ROFJSKjQJ3rZY2w7v13y6wxcOQEWPWNPgLifj5ghxMaxVG78yWJ_-TXgrP4y04xj2BFAkj3e_6cqEw3iiiD0mU5vsWDCCa4i7hEOytLiVHhtMgilujcvImgPRZ0m8S7zlBgM5savs7cgD-XU-nqSapOghGDA2b6TWX5jmtlQS4v0jrppMB0rxxxZkwsItknf0TQhnG0dft59Fvx-kER3g1bYgpIGllnoEg8khX5rcnNucIspQxHMBp6gdpeBGIXBWg3Jo3Cdizl_F6qsJbKWCDxPqHQw2BN2QfZ7a4Mz4JJlx50OXu8eM9FGXzDX1T6Muh2vgwXby0RfxSy4ZRtlzZRi5rlXv-HvJjO1GaAO69X30GzDHALYM3OakdvVMflmGwNGzwaIUPZBeF1oYHjVSaxVLCc9coq7_JTPxT1JuouzlE1uI3CdCMpGZ0LOIWN4PRlH_hmo1f4ArnEBvzs6bi423jN3K8WCb7eCQOp2W15sq1W2M4xf123-93puU0cSLkMpj1fpa_o8I8QZDNHy2LTY84ttKk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "parcel_type_id",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "parcel_category_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "square",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "neighborhood",
+							"value": "خخ",
+							"type": "default"
+						},
+						{
+							"key": "parcels_number",
+							"value": "587",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "1000",
+							"type": "default"
+						},
+						{
+							"key": "features",
+							"value": "+++",
+							"type": "default"
+						},
+						{
+							"key": "space",
+							"value": "500",
+							"type": "default"
+						},
+						{
+							"key": "space_type_id",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "degree",
+							"value": "10",
+							"type": "default"
+						},
+						{
+							"key": "city",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "state",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/parcel/16/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"parcel",
+						"16",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show parcels",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzg0MGE2MDE1NzA2ZWQ3ZWJlYTc3ZGY5NWIzZTUwODk5NWM1MTI0N2ZmZjA4OWVhYmY0MmJjMDg4OWFiZTYwZjIzYjg2NjIwOTkzOGIzNzAiLCJpYXQiOjE2NzExNzQzNjYuNDgyNDksIm5iZiI6MTY3MTE3NDM2Ni40ODI0OTYsImV4cCI6MTcwMjcxMDM2Ni4yNjMxMjgsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.sZY_ClK-C35y9hs0Qj59WEmrkJQwKzg48iHtZkbBV4u_dyTatHeP16ICNF7Q_kSiXXFdQHz0OSluFMGTy2I6ctNNVUNWI4kYVMjOqKErnPNY6eYt2HFJZ5Vx5jIW3giUQ2HP3COqsY587ROFJSKjQJ3rZY2w7v13y6wxcOQEWPWNPgLifj5ghxMaxVG78yWJ_-TXgrP4y04xj2BFAkj3e_6cqEw3iiiD0mU5vsWDCCa4i7hEOytLiVHhtMgilujcvImgPRZ0m8S7zlBgM5savs7cgD-XU-nqSapOghGDA2b6TWX5jmtlQS4v0jrppMB0rxxxZkwsItknf0TQhnG0dft59Fvx-kER3g1bYgpIGllnoEg8khX5rcnNucIspQxHMBp6gdpeBGIXBWg3Jo3Cdizl_F6qsJbKWCDxPqHQw2BN2QfZ7a4Mz4JJlx50OXu8eM9FGXzDX1T6Muh2vgwXby0RfxSy4ZRtlzZRi5rlXv-HvJjO1GaAO69X30GzDHALYM3OakdvVMflmGwNGzwaIUPZBeF1oYHjVSaxVLCc9coq7_JTPxT1JuouzlE1uI3CdCMpGZ0LOIWN4PRlH_hmo1f4ArnEBvzs6bi423jN3K8WCb7eCQOp2W15sq1W2M4xf123-93puU0cSLkMpj1fpa_o8I8QZDNHy2LTY84ttKk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/parcel/16/show",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"parcel",
+						"16",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all  parcels  for this user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzg0MGE2MDE1NzA2ZWQ3ZWJlYTc3ZGY5NWIzZTUwODk5NWM1MTI0N2ZmZjA4OWVhYmY0MmJjMDg4OWFiZTYwZjIzYjg2NjIwOTkzOGIzNzAiLCJpYXQiOjE2NzExNzQzNjYuNDgyNDksIm5iZiI6MTY3MTE3NDM2Ni40ODI0OTYsImV4cCI6MTcwMjcxMDM2Ni4yNjMxMjgsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.sZY_ClK-C35y9hs0Qj59WEmrkJQwKzg48iHtZkbBV4u_dyTatHeP16ICNF7Q_kSiXXFdQHz0OSluFMGTy2I6ctNNVUNWI4kYVMjOqKErnPNY6eYt2HFJZ5Vx5jIW3giUQ2HP3COqsY587ROFJSKjQJ3rZY2w7v13y6wxcOQEWPWNPgLifj5ghxMaxVG78yWJ_-TXgrP4y04xj2BFAkj3e_6cqEw3iiiD0mU5vsWDCCa4i7hEOytLiVHhtMgilujcvImgPRZ0m8S7zlBgM5savs7cgD-XU-nqSapOghGDA2b6TWX5jmtlQS4v0jrppMB0rxxxZkwsItknf0TQhnG0dft59Fvx-kER3g1bYgpIGllnoEg8khX5rcnNucIspQxHMBp6gdpeBGIXBWg3Jo3Cdizl_F6qsJbKWCDxPqHQw2BN2QfZ7a4Mz4JJlx50OXu8eM9FGXzDX1T6Muh2vgwXby0RfxSy4ZRtlzZRi5rlXv-HvJjO1GaAO69X30GzDHALYM3OakdvVMflmGwNGzwaIUPZBeF1oYHjVSaxVLCc9coq7_JTPxT1JuouzlE1uI3CdCMpGZ0LOIWN4PRlH_hmo1f4ArnEBvzs6bi423jN3K8WCb7eCQOp2W15sq1W2M4xf123-93puU0cSLkMpj1fpa_o8I8QZDNHy2LTY84ttKk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/parcel/index",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"parcel",
+						"index"
 					]
 				}
 			},

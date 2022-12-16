@@ -107,7 +107,7 @@
 
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="features"> المميزات
-                    <span class="required">*</span>
+                    <span class="required"></span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <textarea rows="5" name="features"  id="features" required="required"
