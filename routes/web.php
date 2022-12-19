@@ -35,4 +35,6 @@ Route::namespace('App\Http\Controllers')->middleware(['auth', 'admin'])->group(f
     Route::resource('state/city', 'StateCityController');
     Route::resource('agent', 'AgentController');
     Route::resource('parcel', 'ParcelController');
+    Route::resource('houses', 'HouseController');
+    Route::resource('apartments', 'ApartmentController');
 });

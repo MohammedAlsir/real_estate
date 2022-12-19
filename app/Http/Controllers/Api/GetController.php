@@ -50,7 +50,7 @@ class GetController extends Controller
 
     public function get_parcels(Request $request) // Get parcels كل الاراضي
     {
-        $parcels = Parcel::with(['state', 'city', 'category', 'type', 'spaceType']);
+        $parcels = Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user']);
 
         if ($request->state_id)
             $parcels->where('state_id', $request->state_id);

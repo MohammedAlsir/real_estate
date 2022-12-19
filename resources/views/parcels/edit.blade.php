@@ -19,7 +19,9 @@
             @csrf
             @method('put')
 
-            @livewire('edit-select-state',['parcel_id' => $parcel->id])
+            {{-- @livewire('edit-select-state',['parcel_id' => $parcel->id]) --}}
+            @livewire('edit-select-state',['model'=> 'Parcel','item_id' => $parcel->id])
+
 
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="neighborhood"> الحي

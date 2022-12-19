@@ -44,6 +44,20 @@
                         </ul>
                     </li>
 
+                    <li><a><i class="fa fa-cubes"></i>المنازل<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{route('houses.index')}}">كل المنازل</a></li>
+                            <li><a href="{{route('houses.create')}}">إضافة منزل جديد</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a><i class="fa fa-cubes"></i>الشقق السكنية<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{route('apartments.index')}}">كل الشقق</a></li>
+                            <li><a href="{{route('apartments.create')}}">إضافة شقة جديدة</a></li>
+                        </ul>
+                    </li>
+
 
                     <!-- Hotels -->
 
