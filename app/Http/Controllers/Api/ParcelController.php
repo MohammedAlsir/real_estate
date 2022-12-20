@@ -15,7 +15,7 @@ class ParcelController extends Controller
     // index  Parcel
     public function index_parcels()
     {
-        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType'])->where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user'])->where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return $this->returnDataWithOutToken('parcel', $parcel, 200);
     }
 
@@ -116,7 +116,7 @@ class ParcelController extends Controller
     // show Parcel
     public function show_parcels($id)
     {
-        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType'])->find($id);
+        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user'])->find($id);
 
         if ($parcel) {
             if ($parcel->user_id == Auth::user()->id) {
