@@ -38,11 +38,19 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
         Route::get('profile', 'AuthController@get_profile');
         Route::post('profile', 'AuthController@edit_profile');
 
+        // For Parcel
         Route::get('parcel/index', 'ParcelController@index_parcels'); // == all  his Parcel  ==
         Route::post('parcel/create', 'ParcelController@create_parcels'); // == create Parcel ==
         Route::post('parcel/{id}/edit', 'ParcelController@edit_parcels'); // == edit Parcel ==
         Route::get('parcel/{id}/show', 'ParcelController@show_parcels'); // == show Parcel ==
         Route::delete('parcel/{id}/delete', 'ParcelController@delete_parcels'); // == delete  Parcel ==
+
+        // For house
+        Route::get('house/index', 'HouseController@index_house'); // == all  his house  ==
+        Route::post('house/create', 'HouseController@create_house'); // == create house ==
+        Route::post('house/{id}/edit', 'HouseController@edit_house'); // == edit house ==
+        Route::get('house/{id}/show', 'HouseController@show_house'); // == show house ==
+        Route::delete('house/{id}/delete', 'HouseController@delete_house'); // == delete  house ==
 
     });
 

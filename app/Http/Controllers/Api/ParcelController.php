@@ -3,19 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Image;
 use App\Models\Parcel;
 use App\Traits\ApiMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class ParcelController extends Controller
 {
+    private $uploadPath = "uploads/parcels/";
+
     use ApiMessage;
     // index  Parcel
     public function index_parcels()
     {
-        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user'])->where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'image'])->where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return $this->returnDataWithOutToken('parcel', $parcel, 200);
     }
 
@@ -58,13 +62,33 @@ class ParcelController extends Controller
         $parcel->city_id = $request->city;
         $parcel->user_id = Auth::user()->id;
         $parcel->save();
+        // Start Photo
+        $formFileName = "photo";
+        $fileFinalName = "";
+        if ($request->$formFileName != "") {
+            // Delete file if there is a new one
+            $fileFinalName = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->uploadPath;
+            $request->file($formFileName)->move($path, $fileFinalName);
+        }
+
+        if ($fileFinalName != "") {
+            $image = new Image();
+            $image->photo = $fileFinalName;
+            $image->parcel_id = $parcel->id;
+            $image->save();
+        }
+        //End Photo
         return $this->returnMessage(true, "تم اضافة قطعة الارض بنجاح", 200);
     }
 
     // edit Parcel
     public function edit_parcels(Request $request, $id)
     {
-        $parcel =  Parcel::find($id);
+        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'image'])->find($id);
 
         if ($parcel) {
             if ($parcel->user_id == Auth::user()->id) {
@@ -103,6 +127,39 @@ class ParcelController extends Controller
                 $parcel->city_id = $request->city;
                 $parcel->save();
 
+                // Start Photo
+                $formFileName = "photo";
+                $fileFinalName = "";
+                if ($request->$formFileName != "") {
+                    // Delete file if there is a new one
+                    if ($parcel->image && $parcel->image->$formFileName != "") {
+                        File::delete($this->uploadPath . $parcel->image->$formFileName);
+                    }
+                    $fileFinalName = time() . rand(
+                        1111,
+                        9999
+                    ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+                    $path = $this->uploadPath;
+                    $request->file($formFileName)->move($path, $fileFinalName);
+                }
+
+                if ($fileFinalName != "") {
+                    if ($parcel->image) {
+                        $image =  Image::find($parcel->image->id);
+                        $image->photo = $fileFinalName;
+                        // $image->parcel_id = $parcel->id;
+                        $image->save();
+                    } else {
+                        $image = new Image();
+                        $image->photo = $fileFinalName;
+                        $image->parcel_id = $parcel->id;
+                        $image->save();
+                    }
+                }
+                //End Photo
+                $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'image'])->find($id);
+
+
                 return $this->returnDataWithOutToken('parcel', $parcel, "تم تعديل بيانات قطعة الارض بنجاح", 200);
             } else {
                 return $this->returnMessage(false, 'هذه الارض غير موجودة', 200);
@@ -116,7 +173,7 @@ class ParcelController extends Controller
     // show Parcel
     public function show_parcels($id)
     {
-        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user'])->find($id);
+        $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'image'])->find($id);
 
         if ($parcel) {
             if ($parcel->user_id == Auth::user()->id) {

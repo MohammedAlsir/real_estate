@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Parcel;
 use App\Models\ParcelCategory;
 use App\Models\ParcelType;
 use App\Models\SpaceType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ParcelController extends Controller
 {
+    private $uploadPath = "uploads/parcels/";
     /**
      * Display a listing of the resource.
      *
@@ -62,6 +65,7 @@ class ParcelController extends Controller
             'degree' => '', //10
             'city' => 'required', //11
             'state' => 'required', //12
+            'photo' => '', //13
         ]);
 
         $parcel = new Parcel();
@@ -79,6 +83,27 @@ class ParcelController extends Controller
         $parcel->city_id = $request->city;
         $parcel->user_id = Auth::user()->id;
         $parcel->save();
+
+        // Start Photo
+        $formFileName = "photo";
+        $fileFinalName = "";
+        if ($request->$formFileName != "") {
+            // Delete file if there is a new one
+            $fileFinalName = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->uploadPath;
+            $request->file($formFileName)->move($path, $fileFinalName);
+        }
+
+        if ($fileFinalName != "") {
+            $image = new Image();
+            $image->photo = $fileFinalName;
+            $image->parcel_id = $parcel->id;
+            $image->save();
+        }
+        //End Photo
 
         toastr()->info('تم اضافة قطعة الارض  ', 'نجاح');
         return redirect()->route('parcel.index');
@@ -138,7 +163,7 @@ class ParcelController extends Controller
             'degree' => '', //10
             'city' => 'required', //11
             'state' => 'required', //12
-
+            'photo' => '', //13
         ]);
 
         $parcel =  Parcel::find($id);
@@ -156,6 +181,37 @@ class ParcelController extends Controller
         $parcel->city_id = $request->city;
         $parcel->user_id = Auth::user()->id;
         $parcel->save();
+
+        // Start Photo
+        $formFileName = "photo";
+        $fileFinalName = "";
+        if ($request->$formFileName != "") {
+            // Delete file if there is a new one
+            if ($parcel->image && $parcel->image->$formFileName != "") {
+                File::delete($this->uploadPath . $parcel->image->$formFileName);
+            }
+            $fileFinalName = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->uploadPath;
+            $request->file($formFileName)->move($path, $fileFinalName);
+        }
+
+        if ($fileFinalName != "") {
+            if ($parcel->image) {
+                $image =  Image::find($parcel->image->id);
+                $image->photo = $fileFinalName;
+                // $image->parcel_id = $parcel->id;
+                $image->save();
+            } else {
+                $image = new Image();
+                $image->photo = $fileFinalName;
+                $image->parcel_id = $parcel->id;
+                $image->save();
+            }
+        }
+        //End Photo
 
         toastr()->info('تم تعديل بيانات قطعة الارض  ', 'نجاح');
         return redirect()->route('parcel.edit', $parcel->id);

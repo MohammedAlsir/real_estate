@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apartment;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ApartmentController extends Controller
 {
+    private $uploadPath = "uploads/apartments/";
+
     /**
      * Display a listing of the resource.
      *
@@ -54,6 +58,7 @@ class ApartmentController extends Controller
         $apartment = new Apartment();
         $apartment->price = $request->price;
         $apartment->features = $request->features;
+        $apartment->rental_type = $request->rental_type;
         $apartment->rental = $request->rental;
         $apartment->type = $request->type;
         $apartment->space = $request->space;
@@ -65,6 +70,27 @@ class ApartmentController extends Controller
         $apartment->city_id = $request->city;
         $apartment->user_id = Auth::user()->id;
         $apartment->save();
+
+        // Start Photo
+        $formFileName = "photo";
+        $fileFinalName = "";
+        if ($request->$formFileName != "") {
+            // Delete file if there is a new one
+            $fileFinalName = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->uploadPath;
+            $request->file($formFileName)->move($path, $fileFinalName);
+        }
+
+        if ($fileFinalName != "") {
+            $image = new Image();
+            $image->photo = $fileFinalName;
+            $image->apartment_id = $apartment->id;
+            $image->save();
+        }
+        //End Photo
 
         toastr()->info('تم اضافة الشقة السكنية', 'نجاح');
         return redirect()->route('apartments.index');
@@ -118,6 +144,7 @@ class ApartmentController extends Controller
         $apartment =  Apartment::find($id);
         $apartment->price = $request->price;
         $apartment->features = $request->features;
+        $apartment->rental_type = $request->rental_type;
         $apartment->rental = $request->rental;
         $apartment->type = $request->type;
         $apartment->space = $request->space;
@@ -129,6 +156,37 @@ class ApartmentController extends Controller
         $apartment->city_id = $request->city;
         $apartment->user_id = Auth::user()->id;
         $apartment->save();
+
+        // Start Photo
+        $formFileName = "photo";
+        $fileFinalName = "";
+        if ($request->$formFileName != "") {
+            // Delete file if there is a new one
+            if ($apartment->image && $apartment->image->$formFileName != "") {
+                File::delete($this->uploadPath . $apartment->image->$formFileName);
+            }
+            $fileFinalName = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->uploadPath;
+            $request->file($formFileName)->move($path, $fileFinalName);
+        }
+
+        if ($fileFinalName != "") {
+            if ($apartment->image) {
+                $image =  Image::find($apartment->image->id);
+                $image->photo = $fileFinalName;
+                // $image->parcel_id = $parcel->id;
+                $image->save();
+            } else {
+                $image = new Image();
+                $image->photo = $fileFinalName;
+                $image->apartment_id = $apartment->id;
+                $image->save();
+            }
+        }
+        //End Photo
 
         toastr()->info('تم تعديل بيانات الشقة السكنية', 'نجاح');
         return redirect()->route('apartments.edit', $apartment->id);

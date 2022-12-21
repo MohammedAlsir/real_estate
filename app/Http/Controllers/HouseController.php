@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\House;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class HouseController extends Controller
 {
+    private $uploadPath = "uploads/houses/";
+
     /**
      * Display a listing of the resource.
      *
@@ -67,6 +71,27 @@ class HouseController extends Controller
         $house->city_id = $request->city;
         $house->user_id = Auth::user()->id;
         $house->save();
+
+        // Start Photo
+        $formFileName = "photo";
+        $fileFinalName = "";
+        if ($request->$formFileName != "") {
+            // Delete file if there is a new one
+            $fileFinalName = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->uploadPath;
+            $request->file($formFileName)->move($path, $fileFinalName);
+        }
+
+        if ($fileFinalName != "") {
+            $image = new Image();
+            $image->photo = $fileFinalName;
+            $image->house_id = $house->id;
+            $image->save();
+        }
+        //End Photo
 
         toastr()->info('تم اضافة المنزل', 'نجاح');
         return redirect()->route('houses.index');
@@ -133,6 +158,37 @@ class HouseController extends Controller
         $house->city_id = $request->city;
         $house->user_id = Auth::user()->id;
         $house->save();
+
+        // Start Photo
+        $formFileName = "photo";
+        $fileFinalName = "";
+        if ($request->$formFileName != "") {
+            // Delete file if there is a new one
+            if ($house->image && $house->image->$formFileName != "") {
+                File::delete($this->uploadPath . $house->image->$formFileName);
+            }
+            $fileFinalName = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->uploadPath;
+            $request->file($formFileName)->move($path, $fileFinalName);
+        }
+
+        if ($fileFinalName != "") {
+            if ($house->image) {
+                $image =  Image::find($house->image->id);
+                $image->photo = $fileFinalName;
+                // $image->parcel_id = $parcel->id;
+                $image->save();
+            } else {
+                $image = new Image();
+                $image->photo = $fileFinalName;
+                $image->house_id = $house->id;
+                $image->save();
+            }
+        }
+        //End Photo
 
         toastr()->info('تم تعديل بيانات المنزل', 'نجاح');
         return redirect()->route('houses.edit', $house->id);

@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price"> النوع
                     <span class="required">*</span>
                 </label>
@@ -91,7 +91,9 @@
                     </select>
                 </div>
 
-            </div>
+            </div> --}}
+
+            @livewire('apartment-type', ['apartment_id' => ''])
 
 
 
@@ -106,6 +108,15 @@
             </div>
 
 
+            <div class="form-group" >
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" >  الصورة
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input style="padding-top: 5px !important" type="file" name="photo"
+                            class="form-control col-md-7 col-xs-12" >
+                </div>
+            </div>
 
 
             <div class="ln_solid"></div>

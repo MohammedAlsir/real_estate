@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price"> النوع
                     <span class="required">*</span>
                 </label>
@@ -73,9 +73,9 @@
                         <option {{$apartment->type == "2"? "selected":""}} value="2">ايجار مفروش</option>
                     </select>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price"> السعر
                     <span class="required">*</span>
                 </label>
@@ -92,7 +92,10 @@
                     </select>
                 </div>
 
-            </div>
+            </div> --}}
+
+            @livewire('apartment-type', ['apartment_id' => $apartment->id])
+
 
 
 
@@ -107,6 +110,23 @@
             </div>
 
 
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-4">
+                    <img style="width: 150px; height: 150px; object-fit: cover;"  src="{{$apartment->image ?  asset('uploads/apartments/'.$apartment->image->photo) : ''}}" alt="لا يوجد صورة حاليا" srcset="">
+                </div>
+            </div>
+
+
+            <div class="form-group" >
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" >  الصورة
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input style="padding-top: 5px !important" type="file" name="photo"
+                            class="form-control col-md-7 col-xs-12" >
+                </div>
+            </div>
 
 
             <div class="ln_solid"></div>

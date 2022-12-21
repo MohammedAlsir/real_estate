@@ -9,6 +9,11 @@ class Apartment extends Model
 {
     use HasFactory;
 
+    public function image()
+    {
+        return $this->hasOne(Image::class);
+    }
+
     public function state()
     {
         return $this->belongsTo(State::class);

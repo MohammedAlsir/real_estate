@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', [1, 2]); // النوع 1 ايجار عادي او  2 بيع مفروش
+            $table->enum('type', [1, 2]); // النوع 1 ايجار او  2 بيع
             $table->string('square'); // المربع
             $table->string('neighborhood'); // الحي
             $table->string('apartment_number')->nullable(); // رقم المنزل
             $table->integer('price'); // السعر
-            $table->enum('rental', ['daily', 'monthly', 'yearly']); // سعر الاجار ان وجد
+
+            $table->enum('rental_type', [1, 2])->nullable(); // نوع الاجار ان وجد  // النوع 1 عادي او  2 مفروش
+            $table->enum('rental', ['daily', 'monthly', 'yearly'])->nullable(); // سعر الاجار ان وجد
             $table->string('features')->nullable(); // المميزات
             $table->integer('space'); // المساحة
             // نوع المساحة

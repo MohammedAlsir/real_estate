@@ -135,12 +135,32 @@
             </div>
 
 
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-4">
+                    <img style="width: 150px; height: 150px; object-fit: cover;"  src="{{$parcel->image ?  asset('uploads/parcels/'.$parcel->image->photo) : ''}}" alt="لا يوجد صورة حاليا" srcset="">
+                </div>
+            </div>
+
+
+            <div class="form-group" >
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" >  الصورة
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input style="padding-top: 5px !important" type="file" name="photo"
+                            class="form-control col-md-7 col-xs-12" >
+                </div>
+            </div>
+
+
+
 
             <div class="ln_solid"></div>
             <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                     {{-- <button type="submit" class="btn btn-primary">انصراف</button> --}}
-                    <button type="" id="Swal" class="btn btn-success btn-block">إضافة</button>
+                    <button type="" id="Swal" class="btn btn-success btn-block">تعديل</button>
                 </div>
             </div>
 
