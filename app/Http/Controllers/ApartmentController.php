@@ -43,7 +43,7 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'price' => 'required', //11
+            'price' => '', //11
             'features' => '', //10
             'rental' => '', //9
             'type' => 'required', //8
@@ -129,7 +129,7 @@ class ApartmentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'price' => 'required', //11
+            'price' => '', //11
             'features' => '', //10
             'rental' => '', //9
             'type' => 'required', //8

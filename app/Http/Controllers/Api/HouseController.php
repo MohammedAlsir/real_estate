@@ -34,7 +34,7 @@ class HouseController extends Controller
                 'square' => 'required', //2
                 'neighborhood' => 'required', //3
                 'house_number' => '', //4
-                'price' => 'required', //5
+                'price' => '', //5
                 'rental' => '', //6
                 'features' => '', //7
                 'space' => 'required', //8
@@ -97,7 +97,7 @@ class HouseController extends Controller
                         'square' => 'required', //2
                         'neighborhood' => 'required', //3
                         'house_number' => '', //4
-                        'price' => 'required', //5
+                        'price' => '', //5
                         'rental' => '', //6
                         'features' => '', //7
                         'space' => 'required', //8

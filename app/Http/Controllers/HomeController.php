@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agent;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $agent_nonactive = User::where('type', 2)->where('status', null)->count();
+        $agent_active = User::where('type', 2)->where('status', 'on')->count();
+        return view('home', compact(
+            'agent_nonactive',
+            'agent_active',
+        ));
     }
 }

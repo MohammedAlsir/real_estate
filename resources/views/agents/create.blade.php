@@ -140,7 +140,7 @@
                     <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="email" name="email" id="email" required="required"
+                    <input type="text" name="email" id="email" required="required"
                         class="form-control col-md-7 col-xs-12" value="">
                 </div>
             </div>

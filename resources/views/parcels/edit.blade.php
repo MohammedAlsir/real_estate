@@ -100,10 +100,10 @@
 
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price"> السعر
-                    <span class="required">*</span>
+                    <span class="required"></span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="number" name="price" value="{{$parcel->price}}" id="price" required="required"
+                    <input type="number" name="price" value="{{$parcel->price}}" id="price"
                         class="form-control col-md-7 col-xs-12" value="">
                 </div>
             </div>
@@ -113,7 +113,7 @@
                     <span class="required"></span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <textarea rows="5" name="features"  id="features" required="required"
+                    <textarea rows="5" name="features"  id="features" 
                         class="form-control col-md-7 col-xs-12" >{{$parcel->features}}</textarea>
                 </div>
             </div>

@@ -58,7 +58,7 @@ class ParcelController extends Controller
             'square' => 'required', //3
             'neighborhood' => 'required', //4
             'parcels_number' => '', //5
-            'price' => 'required', //6
+            'price' => '', //6
             'features' => '', //7
             'space' => 'required', //8
             'space_type_id' => 'required', //9
@@ -156,7 +156,7 @@ class ParcelController extends Controller
             'square' => 'required', //3
             'neighborhood' => 'required', //4
             'parcels_number' => '', //5
-            'price' => 'required', //6
+            'price' => '', //6
             'features' => '', //7
             'space' => 'required', //8
             'space_type_id' => 'required', //9

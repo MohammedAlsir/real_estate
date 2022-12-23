@@ -57,7 +57,7 @@ class AgentController extends Controller
             'facebook_account' => '',
             'logo' => '',
             'email' => 'unique:users',
-            'password' => 'required|min:8',
+            'password' => 'required',
             'status' => '',
         ], [
             'email.unique' => 'اسم المستخدم موجود مسبقا'
@@ -158,7 +158,7 @@ class AgentController extends Controller
             'twitter_account' => '',
             'facebook_account' => '',
             'logo' => '',
-            'password' => 'min:8',
+            'password' => '',
             'email' => ['required', Rule::unique('users')->ignore($agent)],
             'status' => '',
         ], [

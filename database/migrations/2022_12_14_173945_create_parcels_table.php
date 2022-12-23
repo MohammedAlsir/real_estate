@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('square'); // المربع
             $table->string('neighborhood'); // الحي
             $table->string('parcels_number')->nullable(); // رقم القطعة
-            $table->integer('price'); // السعر
+            $table->integer('price')->nullable(); // السعر
             $table->string('features')->nullable(); // المميزات
             $table->integer('space'); // المساحة
             // نوع المساحة

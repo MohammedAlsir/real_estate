@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('square'); // المربع
             $table->string('neighborhood'); // الحي
             $table->string('house_number')->nullable(); // رقم المنزل
-            $table->integer('price'); // السعر
+            $table->integer('price')->nullable();// السعر
             $table->enum('rental', ['daily', 'monthly', 'yearly'])->nullable(); // سعر الاجار ان وجد
             $table->string('features')->nullable(); // المميزات
             $table->integer('space'); // المساحة

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->enum('type', [1, 2]); // النوع 1 ايجار او  2 بيع
             $table->string('square'); // المربع
             $table->string('neighborhood'); // الحي
-            $table->string('apartment_number')->nullable(); // رقم المنزل
-            $table->integer('price'); // السعر
+            $table->string('apartment_number')->nullable(); // رقم الشقة
+            $table->integer('price')->nullable(); // السعر
 
             $table->enum('rental_type', [1, 2])->nullable(); // نوع الاجار ان وجد  // النوع 1 عادي او  2 مفروش
             $table->enum('rental', ['daily', 'monthly', 'yearly'])->nullable(); // سعر الاجار ان وجد

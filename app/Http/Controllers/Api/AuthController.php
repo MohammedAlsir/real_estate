@@ -26,12 +26,15 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $data = $request->validate([
-            'email'     => 'required|email',
-            'password'  => 'required|min:8'
+            'email'     => 'required',
+            'password'  => 'required'
         ]);
 
         // == begin attempt ==
         if (Auth::attempt($data)) {
+            if (Auth::user()->status == null)
+                return $this->returnMessage(false, 'عفوا ,هذا الحساب غير مفعل الرجاء مراجعة ادارة التطبيق  ', 200);
+
             // == Create Token ==
             $token = Auth::guard()->user()->createToken('Token')->accessToken;
             //  == return user data with token ==
@@ -39,7 +42,7 @@ class AuthController extends Controller
             return $this->returnData('user', Auth::guard()->user(), $token);
         } else
             // == there is error ==
-            return $this->returnMessage(false, 'عفوا , هناك خطأ في كلمة المرور او  البريد الالكتروني  ', 200);
+            return $this->returnMessage(false, 'عفوا , هناك خطأ في اسم المستخدم كلمة المرور   ', 200);
         // == end attempt ==
     }
 
@@ -67,8 +70,8 @@ class AuthController extends Controller
             $request->all(),
             [
                 'name'      => 'string|max:255',
-                'email'     => 'string|email|max:255|unique:users,email,' . $user->id,
-                'password'  => 'string|min:8|confirmed',
+                'email'     => 'string|max:255|unique:users,email,' . $user->id,
+                'password'  => 'string|confirmed',
                 'phone'     => '',
 
                 'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',

@@ -34,7 +34,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
 
 
     // For Authentication
-    Route::group(['middleware' => 'auth:api'], function () {
+    Route::group(['middleware' => ['auth:api', 'status']], function () {
         Route::get('profile', 'AuthController@get_profile');
         Route::post('profile', 'AuthController@edit_profile');
 
@@ -51,6 +51,13 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
         Route::post('house/{id}/edit', 'HouseController@edit_house'); // == edit house ==
         Route::get('house/{id}/show', 'HouseController@show_house'); // == show house ==
         Route::delete('house/{id}/delete', 'HouseController@delete_house'); // == delete  house ==
+
+        // For apartment
+        Route::get('apartment/index', 'ApartmentController@index_apartment'); // == all  his apartment  ==
+        Route::post('apartment/create', 'ApartmentController@create_apartment'); // == create apartment ==
+        Route::post('apartment/{id}/edit', 'ApartmentController@edit_apartment'); // == edit apartment ==
+        Route::get('apartment/{id}/show', 'ApartmentController@show_apartment'); // == show apartment ==
+        Route::delete('apartment/{id}/delete', 'ApartmentController@delete_apartment'); // == delete  house ==
 
     });
 

@@ -29,16 +29,17 @@
 
     <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price"> السعر
-            <span class="required">*</span>
+            <span class="required"></span>
         </label>
         <div class="col-md-4 col-sm-4 col-xs-6">
-            <input type="number" wire:model="price" name="price" id="price" required="required"
+            <input type="number" wire:model="price" name="price" id="price"
                 class="form-control col-md-7 col-xs-12" value="">
         </div>
         @if ($selectType == 1)
 
         <div class="col-md-2 col-sm-2 col-xs-6">
-            <select wire:model="rental" name="rental" required="required" class="form-control col-md-7 col-xs-12">
+            <select wire:model="rental" name="rental" class="form-control col-md-7 col-xs-12">
+                <option value=""> حدد المدة</option>
                 <option value="monthly">شهريا</option>
                 <option value="yearly">سنويا</option>
                 <option value="daily">يوميا</option>
