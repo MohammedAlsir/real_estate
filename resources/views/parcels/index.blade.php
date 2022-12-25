@@ -4,9 +4,16 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2> قطع اراضي {{Helper::GeneralSiteSettings('name')}}
+            <h2> قطع الاراضي </h2>
                 {{-- <small>کاربران</small> --}}
-            </h2>
+               <form action="{{route('parcel.index')}}" style="display: inline-block; margin-right: 20px">
+                    <select  onchange="this.form.submit()"  class="form-control"  name="" id="">
+                        <option value="1">الخاصة بالشركة </option>
+                        <option value="2">الخاصة بالوكلاء</option>
+                        <option value="3">الخاصة بالشركة و بالوكلاء</option>
+                    </select>
+               </form>
+
 
             <div class="clearfix"></div>
         </div>

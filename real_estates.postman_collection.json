@@ -1258,6 +1258,380 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Apartments",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTQ5ZWE0OTg1OTg3MmM1ZGI2Y2RhZjZjNDViZmY5NzgwOWYzYWExYjY4Mjk5NzY3MTQ5NDk2MWYzZTk3NTJlMmI3YTcwMjFmN2ViNjUwYjgiLCJpYXQiOjE2NzE4Mjg2NjguMTQ5NzQ0LCJuYmYiOjE2NzE4Mjg2NjguMTQ5NzU1LCJleHAiOjE3MDMzNjQ2NjguMDY1ODgyLCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.LICcK9eEuRe0dkVjAdpZJAGxI2KFnLdGFbTjAM5NBcGpDGHnuCVw_BHWfELNwLRa8eMIXkVmJQoeuGguutbn2l4ZdcTjvBHddVKlcpp987uMQ7gpY2VhBTwTvYE9GeUUMfrk1NyPOAj2U1tb4jrmuw4g3hQG-3gKvnE8rRBOwtvSxezz_gAWAlvNydmbgsDfHHf2VK-ohgG-kAoZPuQkJ-8kv3mQF2AGUs2z5YLNIPzxPE45_AIVFVndlynS0QEtMTHAvUPCpEVyic3dI8m-wO3s9SKXT7pWhy30o3OXFPerTHDKjjaY7AJs9lIHr-fvacKZeJ-fQD0wAox81RXpQjchzUtrn4__uheVBrsmJQOgilL9fd1XwTDt5cslJmsnSuEs04s8QN_TYRf-ciDe_vTxAQbMnYeCVNRVYjjgMVzFBX3X2gpUFz7Nn6v_4ZFBz1yuqo0lUKeuQgz8CUm2kg0tk-W5JTDb_q8mNB78pTiAaKInWXclYwuQS6quRaQaXQc1kzGQyfTSwRbgBfutmiS-V2YJiTR_xpQ34-s5jGIAQtjH8a0vTOjp29yX7fg_UI_rouhwLlxDrQZQX0wA_R7JXnTyj-EsjS6P7WzY2vr8f10vmb3mZAoz-x2eYCu0BhexXLm39s9klWV7Pj3IzbMzX_CTY0ateJ3oN2EtFx8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "1",
+											"description": "النوع 1 ايجار او  2 بيع",
+											"type": "default"
+										},
+										{
+											"key": "square",
+											"value": "10",
+											"type": "default"
+										},
+										{
+											"key": "neighborhood",
+											"value": "الرياض",
+											"type": "default"
+										},
+										{
+											"key": "apartment_number",
+											"value": "155",
+											"description": "رقم الشقة",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "50000",
+											"type": "default"
+										},
+										{
+											"key": "rental_type",
+											"value": "1",
+											"description": "نوع الاجار ان وجد  // النوع 1 عادي او  2 مفروش",
+											"type": "default"
+										},
+										{
+											"key": "rental",
+											"value": "daily",
+											"description": "سعر الاجار ان وجد  يستقبل واحد من القيم دي ['daily', 'monthly', 'yearly']",
+											"type": "default"
+										},
+										{
+											"key": "features",
+											"value": "منزل ظريف",
+											"type": "default"
+										},
+										{
+											"key": "space",
+											"value": "500",
+											"type": "default"
+										},
+										{
+											"key": "city",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "state",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/F:/BBM/q.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/apartment/create",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"apartment",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzBjZmQ3MDYyZjFhOWMxZWFjOTE1MGIyMGFhOGE3ODdhMDQ2MjIzNTE5OWM0ODBmYTg4NDNlODljN2JmY2NlZGE5OWM3NzkxMDZlYzYzNjYiLCJpYXQiOjE2NzE2NTM5NTAuMDgzNzc5LCJuYmYiOjE2NzE2NTM5NTAuMDgzNzksImV4cCI6MTcwMzE4OTk0OS44OTEyNjQsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.xLVnmgUXL0HM5XoPSNRJgoI_gh0HUp-yCa1DC1yolaNQ2vNBU4oqT0i1dxYQlYkK9pJCaOIFjBXLed8PqPg4Cc8QLinwDuxRdIlKM8gvc0R9qm2IV-AHQKRTCsAMySn1eeuLsKA8nWLBoBZEsKBd8euxwO3DnBUwNS3BjJlPJL0h2oK4ztCA6Ks83xwX-luM89RMbIOJ4_ACRzVbS1xfirncwL2FYcOcgZtrXZDuRIXzbhGZJJ1J0O_Rjf4TQDlo-CYRtWrK5krrcqEXCM6Q9GBnHiF8eF9RRVtnOkN-4QC0Rg68T7flx3CyPNMcNGmkgW5Oe1VeFgWMhAOBLi9tF5LBfCgTCdPi86z9d164Ew5YcvDB2chIn29S_L2_2BK77kdW5o5HN52rjTySDgmU6oEzU-rCc9wH2Vmk4E4RRKWc7-moiUWz4--RojESJvMHE_o_SAd_NxRI_fNUFN2GZpOptlzn08iOxzW7cu9o-8FfLYjLx1dyEeW4RnzTVTcTRp8T8jn8JTqgc9JrwCqBvvFdBccK2NbpyLpyKYSCHMPkEzzz4HpdfT2FKQ9cGacHaXxT5in7Ayzvja67vlXLHHAzKpVninP1XuOzMXS3bwl8421SIpjnVeCfuQ8qBMxwekQsgViq_hIr8NRdG3VwGtwtKWBr-7x7wKluMLENCzo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "1",
+											"description": "النوع 1 ايجار او  2 بيع",
+											"type": "default"
+										},
+										{
+											"key": "square",
+											"value": "10",
+											"type": "default"
+										},
+										{
+											"key": "neighborhood",
+											"value": "الرياض",
+											"type": "default"
+										},
+										{
+											"key": "apartment_number",
+											"value": "155",
+											"description": "رقم الشقة",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "50000",
+											"type": "default"
+										},
+										{
+											"key": "rental_type",
+											"value": "1",
+											"description": "نوع الاجار ان وجد  // النوع 1 عادي او  2 مفروش",
+											"type": "default"
+										},
+										{
+											"key": "rental",
+											"value": "daily",
+											"description": "سعر الاجار ان وجد  يستقبل واحد من القيم دي ['daily', 'monthly', 'yearly']",
+											"type": "default"
+										},
+										{
+											"key": "features",
+											"value": "منزل ظريف",
+											"type": "default"
+										},
+										{
+											"key": "space",
+											"value": "450",
+											"type": "default"
+										},
+										{
+											"key": "city",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "state",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/F:/BBM/q.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/apartment/6/edit",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"apartment",
+										"6",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show by id  http://127.0.0.1:8000/api/v1/uploads/apartments/444444.png",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTQ5ZWE0OTg1OTg3MmM1ZGI2Y2RhZjZjNDViZmY5NzgwOWYzYWExYjY4Mjk5NzY3MTQ5NDk2MWYzZTk3NTJlMmI3YTcwMjFmN2ViNjUwYjgiLCJpYXQiOjE2NzE4Mjg2NjguMTQ5NzQ0LCJuYmYiOjE2NzE4Mjg2NjguMTQ5NzU1LCJleHAiOjE3MDMzNjQ2NjguMDY1ODgyLCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.LICcK9eEuRe0dkVjAdpZJAGxI2KFnLdGFbTjAM5NBcGpDGHnuCVw_BHWfELNwLRa8eMIXkVmJQoeuGguutbn2l4ZdcTjvBHddVKlcpp987uMQ7gpY2VhBTwTvYE9GeUUMfrk1NyPOAj2U1tb4jrmuw4g3hQG-3gKvnE8rRBOwtvSxezz_gAWAlvNydmbgsDfHHf2VK-ohgG-kAoZPuQkJ-8kv3mQF2AGUs2z5YLNIPzxPE45_AIVFVndlynS0QEtMTHAvUPCpEVyic3dI8m-wO3s9SKXT7pWhy30o3OXFPerTHDKjjaY7AJs9lIHr-fvacKZeJ-fQD0wAox81RXpQjchzUtrn4__uheVBrsmJQOgilL9fd1XwTDt5cslJmsnSuEs04s8QN_TYRf-ciDe_vTxAQbMnYeCVNRVYjjgMVzFBX3X2gpUFz7Nn6v_4ZFBz1yuqo0lUKeuQgz8CUm2kg0tk-W5JTDb_q8mNB78pTiAaKInWXclYwuQS6quRaQaXQc1kzGQyfTSwRbgBfutmiS-V2YJiTR_xpQ34-s5jGIAQtjH8a0vTOjp29yX7fg_UI_rouhwLlxDrQZQX0wA_R7JXnTyj-EsjS6P7WzY2vr8f10vmb3mZAoz-x2eYCu0BhexXLm39s9klWV7Pj3IzbMzX_CTY0ateJ3oN2EtFx8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/apartment/12/show",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"apartment",
+										"12",
+										"show"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all  apartment for this user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzBjZmQ3MDYyZjFhOWMxZWFjOTE1MGIyMGFhOGE3ODdhMDQ2MjIzNTE5OWM0ODBmYTg4NDNlODljN2JmY2NlZGE5OWM3NzkxMDZlYzYzNjYiLCJpYXQiOjE2NzE2NTM5NTAuMDgzNzc5LCJuYmYiOjE2NzE2NTM5NTAuMDgzNzksImV4cCI6MTcwMzE4OTk0OS44OTEyNjQsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.xLVnmgUXL0HM5XoPSNRJgoI_gh0HUp-yCa1DC1yolaNQ2vNBU4oqT0i1dxYQlYkK9pJCaOIFjBXLed8PqPg4Cc8QLinwDuxRdIlKM8gvc0R9qm2IV-AHQKRTCsAMySn1eeuLsKA8nWLBoBZEsKBd8euxwO3DnBUwNS3BjJlPJL0h2oK4ztCA6Ks83xwX-luM89RMbIOJ4_ACRzVbS1xfirncwL2FYcOcgZtrXZDuRIXzbhGZJJ1J0O_Rjf4TQDlo-CYRtWrK5krrcqEXCM6Q9GBnHiF8eF9RRVtnOkN-4QC0Rg68T7flx3CyPNMcNGmkgW5Oe1VeFgWMhAOBLi9tF5LBfCgTCdPi86z9d164Ew5YcvDB2chIn29S_L2_2BK77kdW5o5HN52rjTySDgmU6oEzU-rCc9wH2Vmk4E4RRKWc7-moiUWz4--RojESJvMHE_o_SAd_NxRI_fNUFN2GZpOptlzn08iOxzW7cu9o-8FfLYjLx1dyEeW4RnzTVTcTRp8T8jn8JTqgc9JrwCqBvvFdBccK2NbpyLpyKYSCHMPkEzzz4HpdfT2FKQ9cGacHaXxT5in7Ayzvja67vlXLHHAzKpVninP1XuOzMXS3bwl8421SIpjnVeCfuQ8qBMxwekQsgViq_hIr8NRdG3VwGtwtKWBr-7x7wKluMLENCzo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/apartment/index",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"apartment",
+										"index"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzBjZmQ3MDYyZjFhOWMxZWFjOTE1MGIyMGFhOGE3ODdhMDQ2MjIzNTE5OWM0ODBmYTg4NDNlODljN2JmY2NlZGE5OWM3NzkxMDZlYzYzNjYiLCJpYXQiOjE2NzE2NTM5NTAuMDgzNzc5LCJuYmYiOjE2NzE2NTM5NTAuMDgzNzksImV4cCI6MTcwMzE4OTk0OS44OTEyNjQsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.xLVnmgUXL0HM5XoPSNRJgoI_gh0HUp-yCa1DC1yolaNQ2vNBU4oqT0i1dxYQlYkK9pJCaOIFjBXLed8PqPg4Cc8QLinwDuxRdIlKM8gvc0R9qm2IV-AHQKRTCsAMySn1eeuLsKA8nWLBoBZEsKBd8euxwO3DnBUwNS3BjJlPJL0h2oK4ztCA6Ks83xwX-luM89RMbIOJ4_ACRzVbS1xfirncwL2FYcOcgZtrXZDuRIXzbhGZJJ1J0O_Rjf4TQDlo-CYRtWrK5krrcqEXCM6Q9GBnHiF8eF9RRVtnOkN-4QC0Rg68T7flx3CyPNMcNGmkgW5Oe1VeFgWMhAOBLi9tF5LBfCgTCdPi86z9d164Ew5YcvDB2chIn29S_L2_2BK77kdW5o5HN52rjTySDgmU6oEzU-rCc9wH2Vmk4E4RRKWc7-moiUWz4--RojESJvMHE_o_SAd_NxRI_fNUFN2GZpOptlzn08iOxzW7cu9o-8FfLYjLx1dyEeW4RnzTVTcTRp8T8jn8JTqgc9JrwCqBvvFdBccK2NbpyLpyKYSCHMPkEzzz4HpdfT2FKQ9cGacHaXxT5in7Ayzvja67vlXLHHAzKpVninP1XuOzMXS3bwl8421SIpjnVeCfuQ8qBMxwekQsgViq_hIr8NRdG3VwGtwtKWBr-7x7wKluMLENCzo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/apartment/7/delete",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"apartment",
+										"7",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
