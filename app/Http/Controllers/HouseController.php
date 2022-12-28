@@ -17,11 +17,27 @@ class HouseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $index = 1;
-        $houses = House::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
-        return view('houses.index', compact('houses', 'index'));
+        $type = 0;
+
+        // >الخاصة بالوكلاء
+        if ($request->house == 2) {
+            $houses = House::where('user_id', '!=', Auth::user()->id)->orderBy('id', 'DESC')->get();
+            $type = 2;
+        }
+        // >الخاصة بالشركة و بالوكلاء
+        else if ($request->house == 3) {
+            $houses = House::orderBy('id', 'DESC')->get();
+            $type = 3;
+        }
+        // الخاصة بالشركة
+        else {
+            $houses = House::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+            $type = 1;
+        }
+        return view('houses.index', compact('houses', 'index', 'type'));
     }
 
     /**
@@ -156,7 +172,6 @@ class HouseController extends Controller
 
         $house->state_id = $request->state;
         $house->city_id = $request->city;
-        $house->user_id = Auth::user()->id;
         $house->save();
 
         // Start Photo

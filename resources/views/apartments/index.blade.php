@@ -6,6 +6,13 @@
         <div class="x_title">
             <h2>  الشقق السكنية {{Helper::GeneralSiteSettings('name')}}
                 {{-- <small>کاربران</small> --}}
+                <form action="{{route('apartments.index')}}" method="GET" style="display: inline-block; margin-right: 20px">
+                    <select  onchange="this.form.submit()"  class="form-control"  name="apartment" id="">
+                        <option {{$type == 1 ? 'selected':''}} value="1">الخاصة بالشركة </option>
+                        <option {{$type == 2 ? 'selected':''}} value="2">الخاصة بالوكلاء</option>
+                        <option {{$type == 3 ? 'selected':''}} value="3">الخاصة بالشركة و بالوكلاء</option>
+                    </select>
+                </form>
             </h2>
 
             <div class="clearfix"></div>
@@ -20,6 +27,7 @@
                             <thead>
                                 <tr>
                                     <th>الرقم</th>
+                                    <th>الوكيل</th>
                                     <th>رقم الشقة</th>
                                     <th>النوع</th>
                                     <th>الولاية</th>
@@ -34,6 +42,8 @@
                                 @foreach ($apartments as $item)
                                 <tr>
                                     <td>{{$index++}}</td>
+                                    <td>{{$item->user->name}}</td>
+
                                     <td>{{$item->apartment_number}}</td>
                                     <td>
                                         @if ($item->type == 1)
@@ -183,6 +193,21 @@
                                                             <span class="message">
                                                                 {{$item->features}}
                                                             </span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a>
+                                                            <span>
+                                                                <span>الصورة</span>
+                                                            </span>
+                                                            @isset ($item->image->photo)
+                                                                <img style="width: 60%" src="{{ asset('uploads/apartments/'.$item->image->photo)}}">
+                                                            @else
+                                                                <span class="message">
+                                                                    لا يوجد صورة حاليا
+                                                                </span>
+                                                            @endisset
                                                         </a>
                                                     </li>
 

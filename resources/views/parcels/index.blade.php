@@ -6,11 +6,11 @@
         <div class="x_title">
             <h2> قطع الاراضي </h2>
                 {{-- <small>کاربران</small> --}}
-               <form action="{{route('parcel.index')}}" style="display: inline-block; margin-right: 20px">
-                    <select  onchange="this.form.submit()"  class="form-control"  name="" id="">
-                        <option value="1">الخاصة بالشركة </option>
-                        <option value="2">الخاصة بالوكلاء</option>
-                        <option value="3">الخاصة بالشركة و بالوكلاء</option>
+               <form action="{{route('parcel.index')}}" method="GET" style="display: inline-block; margin-right: 20px">
+                    <select  onchange="this.form.submit()"  class="form-control"  name="parcel" id="">
+                        <option {{$type == 1 ? 'selected':''}} value="1">الخاصة بالشركة </option>
+                        <option {{$type == 2 ? 'selected':''}} value="2">الخاصة بالوكلاء</option>
+                        <option {{$type == 3 ? 'selected':''}} value="3">الخاصة بالشركة و بالوكلاء</option>
                     </select>
                </form>
 
@@ -27,6 +27,7 @@
                             <thead>
                                 <tr>
                                     <th>الرقم</th>
+                                    <th>الوكيل</th>
                                     <th>نوع القطعة</th>
                                     <th>رقم القطعة</th>
                                     <th>الولاية</th>
@@ -41,6 +42,7 @@
                                 @foreach ($parcel as $item)
                                 <tr>
                                     <td>{{$index++}}</td>
+                                    <td>{{$item->user->name}}</td>
                                     <td>{{$item->type->name}}</td>
                                     <td>{{$item->parcels_number}}</td>
                                     <td>{{$item->city->state->name}}</td>
@@ -77,6 +79,17 @@
                                             </div>
                                             <div class="modal-body">
                                                 <ul class="list-unstyled msg_list">
+                                                    <li>
+                                                        <a>
+                                                            <span>
+                                                                <span>الوكيل</span>
+                                                            </span>
+                                                            <span class="message">
+                                                                {{$item->user->name}}
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
                                                     <li>
                                                         <a>
                                                             <span>
@@ -177,6 +190,24 @@
                                                             <span class="message">
                                                                 {{$item->category->name}}
                                                             </span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a>
+                                                            <span>
+                                                                <span>الصورة</span>
+                                                            </span>
+                                                            @isset ($item->image->photo)
+                                                                <img style="width: 60%" src="{{ asset('uploads/parcels/'.$item->image->photo)}}">
+                                                            @else
+                                                                <span class="message">
+                                                                    لا يوجد صورة حاليا
+                                                                </span>
+
+                                                            @endisset
+
+
                                                         </a>
                                                     </li>
                                                     <li>

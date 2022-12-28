@@ -17,11 +17,28 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $index = 1;
-        $apartments = Apartment::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
-        return view('apartments.index', compact('apartments', 'index'));
+        $type = 0;
+
+        // >الخاصة بالوكلاء
+        if ($request->apartment == 2) {
+            $apartments = Apartment::where('user_id', '!=', Auth::user()->id)->orderBy('id', 'DESC')->get();
+            $type = 2;
+        }
+        // >الخاصة بالشركة و بالوكلاء
+        else if ($request->apartment == 3) {
+            $apartments = Apartment::orderBy('id', 'DESC')->get();
+            $type = 3;
+        }
+        // الخاصة بالشركة
+        else {
+            $apartments = Apartment::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+            $type = 1;
+        }
+
+        return view('apartments.index', compact('apartments', 'index', 'type'));
     }
 
     /**
@@ -154,7 +171,6 @@ class ApartmentController extends Controller
 
         $apartment->state_id = $request->state;
         $apartment->city_id = $request->city;
-        $apartment->user_id = Auth::user()->id;
         $apartment->save();
 
         // Start Photo

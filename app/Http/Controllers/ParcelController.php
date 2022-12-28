@@ -19,11 +19,27 @@ class ParcelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $index = 1;
-        $parcel = Parcel::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
-        return view('parcels.index', compact('parcel', 'index'));
+        $type = 0;
+
+        // >الخاصة بالوكلاء
+        if ($request->parcel == 2) {
+            $parcel = Parcel::where('user_id', '!=', Auth::user()->id)->orderBy('id', 'DESC')->get();
+            $type = 2;
+        }
+        // >الخاصة بالشركة و بالوكلاء
+        else if ($request->parcel == 3) {
+            $parcel = Parcel::orderBy('id', 'DESC')->get();
+            $type = 3;
+        }
+        // الخاصة بالشركة
+        else {
+            $parcel = Parcel::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+            $type = 1;
+        }
+        return view('parcels.index', compact('parcel', 'index', 'type'));
     }
 
     /**
@@ -179,7 +195,6 @@ class ParcelController extends Controller
         $parcel->degree = $request->degree;
         $parcel->state_id = $request->state;
         $parcel->city_id = $request->city;
-        $parcel->user_id = Auth::user()->id;
         $parcel->save();
 
         // Start Photo

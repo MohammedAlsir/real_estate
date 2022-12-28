@@ -19,6 +19,15 @@
             @csrf
             @method('put')
 
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="neighborhood"> الوكيل
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input  value="{{$parcel->user->name}}" readonly
+                        class="form-control col-md-7 col-xs-12">
+                </div>
+            </div>
+
             {{-- @livewire('edit-select-state',['parcel_id' => $parcel->id]) --}}
             @livewire('edit-select-state',['model'=> 'Parcel','item_id' => $parcel->id])
 
@@ -113,7 +122,7 @@
                     <span class="required"></span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <textarea rows="5" name="features"  id="features" 
+                    <textarea rows="5" name="features"  id="features"
                         class="form-control col-md-7 col-xs-12" >{{$parcel->features}}</textarea>
                 </div>
             </div>

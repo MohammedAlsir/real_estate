@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\City;
 use App\Models\Hotel;
+use App\Models\House;
 use App\Models\Parcel;
 use App\Models\ParcelCategory;
 use App\Models\ParcelType;
@@ -50,7 +51,7 @@ class GetController extends Controller
 
     public function get_parcels(Request $request) // Get parcels كل الاراضي
     {
-        $parcels = Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user']);
+        $parcels = Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user', 'image']);
 
         if ($request->state_id)
             $parcels->where('state_id', $request->state_id);
@@ -63,9 +64,23 @@ class GetController extends Controller
         if ($request->space_type_id)
             $parcels->where('space_type_id', $request->space_type_id);
 
-
-
-
         return $this->returnData('parcels', $parcels->orderBy('id', 'DESC')->get());
+    }
+
+    // get all houses
+    public function get_houses(Request $request) // Get houses كل الاراضي
+    {
+        $houses = House::with(['state', 'city', 'user', 'image']);
+
+        if ($request->state_id)
+            $houses->where('state_id', $request->state_id);
+        if ($request->city_id)
+            $houses->where('city_id', $request->city_id);
+        if ($request->type)
+            $houses->where('type', $request->type);
+        if ($request->rental)
+            $houses->where('rental', $request->rental);
+
+        return $this->returnData('houses', $houses->orderBy('id', 'DESC')->get());
     }
 }

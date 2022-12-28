@@ -30,6 +30,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
 
 
     Route::post('parcels', 'GetController@get_parcels'); // == get all parcels ==
+    Route::post('houses', 'GetController@get_houses'); // == get all parcels ==
 
 
 

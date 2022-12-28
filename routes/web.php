@@ -35,6 +35,7 @@ Route::namespace('App\Http\Controllers')->middleware(['auth', 'admin'])->group(f
     Route::resource('state/city', 'StateCityController');
     Route::resource('agent', 'AgentController');
     Route::resource('parcel', 'ParcelController');
+    // Route::get('index/parcel/{id?}', 'ParcelController@index')->name('parcel.index');
     Route::resource('houses', 'HouseController');
     Route::resource('apartments', 'ApartmentController');
 });
