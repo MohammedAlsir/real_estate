@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
 use App\Models\City;
 use App\Models\Hotel;
 use App\Models\House;
@@ -68,7 +69,7 @@ class GetController extends Controller
     }
 
     // get all houses
-    public function get_houses(Request $request) // Get houses كل الاراضي
+    public function get_houses(Request $request) // Get houses
     {
         $houses = House::with(['state', 'city', 'user', 'image']);
 
@@ -82,5 +83,25 @@ class GetController extends Controller
             $houses->where('rental', $request->rental);
 
         return $this->returnData('houses', $houses->orderBy('id', 'DESC')->get());
+    }
+
+
+    // get all apartment
+    public function get_apartments(Request $request) // Get apartment
+    {
+        $apartments = Apartment::with(['state', 'city', 'user', 'image']);
+
+        if ($request->state_id)
+            $apartments->where('state_id', $request->state_id);
+        if ($request->city_id)
+            $apartments->where('city_id', $request->city_id);
+        if ($request->type)
+            $apartments->where('type', $request->type);
+        if ($request->rental)
+            $apartments->where('rental', $request->rental);
+        if ($request->rental_type)
+            $apartments->where('rental_type', $request->rental_type);
+
+        return $this->returnData('apartments', $apartments->orderBy('id', 'DESC')->get());
     }
 }
