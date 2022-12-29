@@ -20,6 +20,9 @@ class ParcelController extends Controller
     public function index_parcels()
     {
         $parcel =  Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'image'])->where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        foreach ($parcel as $one) {
+            $one['time'] = $one->created_at->diffForHumans();
+        }
         return $this->returnDataWithOutToken('parcel', $parcel, 200);
     }
 
@@ -177,6 +180,7 @@ class ParcelController extends Controller
 
         if ($parcel) {
             if ($parcel->user_id == Auth::user()->id) {
+                $parcel['time'] = $parcel->created_at->diffForHumans();
                 return $this->returnDataWithOutToken('parcel', $parcel, 200);
             } else {
                 return $this->returnMessage(false, 'هذه الارض غير موجودة', 200);

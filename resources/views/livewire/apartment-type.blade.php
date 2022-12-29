@@ -38,7 +38,7 @@
         @if ($selectType == 1)
 
         <div class="col-md-2 col-sm-2 col-xs-6">
-            <select wire:model="rental" name="rental" class="form-control col-md-7 col-xs-12">
+            <select wire:model="rental" name="rental" required class="form-control col-md-7 col-xs-12">
                 <option value=""> حدد المدة</option>
                 <option value="monthly">شهريا</option>
                 <option value="yearly">سنويا</option>

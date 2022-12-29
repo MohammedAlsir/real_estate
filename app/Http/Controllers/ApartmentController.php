@@ -61,8 +61,8 @@ class ApartmentController extends Controller
     {
         $request->validate([
             'price' => '', //11
-            'features' => '', //10
-            'rental' => '', //9
+            'features' => 'required', //10
+            'rental' => 'required', //9
             'type' => 'required', //8
             'space' => 'required', //7
             'apartment_number' => '', //5
@@ -147,8 +147,8 @@ class ApartmentController extends Controller
     {
         $request->validate([
             'price' => '', //11
-            'features' => '', //10
-            'rental' => '', //9
+            'features' => 'required', //10
+            'rental' => 'required', //9
             'type' => 'required', //8
             'space' => 'required', //7
             'apartment_number' => '', //5

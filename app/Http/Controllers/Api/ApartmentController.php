@@ -20,6 +20,9 @@ class ApartmentController extends Controller
     public function index_apartment()
     {
         $apartments =  Apartment::with(['state', 'city', 'image'])->where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        foreach ($apartments as $one) {
+            $one['time'] = $one->created_at->diffForHumans();
+        }
         return $this->returnDataWithOutToken('apartments', $apartments, 200);
     }
 
@@ -171,6 +174,7 @@ class ApartmentController extends Controller
 
         if ($apartment) {
             if ($apartment->user_id == Auth::user()->id) {
+                $apartment['time'] = $apartment->created_at->diffForHumans();
                 return $this->returnDataWithOutToken('apartment', $apartment, 200);
             } else {
                 return $this->returnMessage(false, 'هذه الشقة  غير موجودة', 200);

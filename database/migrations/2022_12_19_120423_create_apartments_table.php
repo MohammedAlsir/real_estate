@@ -32,6 +32,7 @@ return new class extends Migration
             $table->foreignId('state_id')->constrained('states')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('city_id')->constrained('cities')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('count')->default(0); // المشاهدات
             $table->timestamps();
         });
     }

@@ -65,7 +65,13 @@ class GetController extends Controller
         if ($request->space_type_id)
             $parcels->where('space_type_id', $request->space_type_id);
 
-        return $this->returnData('parcels', $parcels->orderBy('id', 'DESC')->get());
+        $final = $parcels->orderBy('id', 'DESC')->get();
+
+        foreach ($final as $one) {
+            $one['time'] = $one->created_at->diffForHumans();
+        }
+
+        return $this->returnData('parcels', $final);
     }
 
     // get all houses
@@ -82,7 +88,13 @@ class GetController extends Controller
         if ($request->rental)
             $houses->where('rental', $request->rental);
 
-        return $this->returnData('houses', $houses->orderBy('id', 'DESC')->get());
+        $final = $houses->orderBy('id', 'DESC')->get();
+
+        foreach ($final as $one) {
+            $one['time'] = $one->created_at->diffForHumans();
+        }
+
+        return $this->returnData('houses', $final);
     }
 
 
@@ -102,6 +114,51 @@ class GetController extends Controller
         if ($request->rental_type)
             $apartments->where('rental_type', $request->rental_type);
 
-        return $this->returnData('apartments', $apartments->orderBy('id', 'DESC')->get());
+        $final = $apartments->orderBy('id', 'DESC')->get();
+
+        foreach ($final as $one) {
+            $one['time'] = $one->created_at->diffForHumans();
+        }
+
+        return $this->returnData('apartments', $final);
+    }
+
+
+    // GET By ID
+    public function get_parcels_by_id($id) //
+    {
+        $parcel = Parcel::with(['state', 'city', 'category', 'type', 'spaceType', 'user', 'image'])->find($id);
+        if ($parcel) {
+            $parcel->count += 1;
+            $parcel->save();
+            $parcel['time'] = $parcel->created_at->diffForHumans();
+            return $this->returnData('parcel', $parcel);
+        } else
+            return $this->returnMessage(false, 'هذه الارض غير موجودة', 200);
+    }
+
+
+    public function get_houses_by_id($id) //
+    {
+        $house = House::with(['state', 'city', 'user', 'image'])->find($id);
+        if ($house) {
+            $house->count += 1;
+            $house->save();
+            $house['time'] = $house->created_at->diffForHumans();
+            return $this->returnData('house', $house);
+        } else
+            return $this->returnMessage(false, 'هذا المنزل غير موجود', 200);
+    }
+
+    public function get_apartments_by_id($id) //
+    {
+        $apartment = Apartment::with(['state', 'city', 'user', 'image'])->find($id);
+        if ($apartment) {
+            $apartment->count += 1;
+            $apartment->save();
+            $apartment['time'] = $apartment->created_at->diffForHumans();
+            return $this->returnData('apartment', $apartment);
+        } else
+            return $this->returnMessage(false, 'هذه الشقة غير موجودة', 200);
     }
 }

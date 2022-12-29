@@ -113,7 +113,7 @@
                     <span class="required"></span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <textarea rows="5" name="features"  id="features"
+                    <textarea rows="5" name="features"  id="features" required
                         class="form-control col-md-7 col-xs-12" >{{$apartment->features}}</textarea>
                 </div>
             </div>

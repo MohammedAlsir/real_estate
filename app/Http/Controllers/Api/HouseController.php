@@ -21,6 +21,9 @@ class HouseController extends Controller
     public function index_house()
     {
         $house =  House::with(['state', 'city', 'image'])->where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        foreach ($house as $one) {
+            $one['time'] = $one->created_at->diffForHumans();
+        }
         return $this->returnDataWithOutToken('house', $house, 200);
     }
 
@@ -173,6 +176,7 @@ class HouseController extends Controller
 
         if ($house) {
             if ($house->user_id == Auth::user()->id) {
+                $house['time'] = $house->created_at->diffForHumans();
                 return $this->returnDataWithOutToken('house', $house, 200);
             } else {
                 return $this->returnMessage(false, 'هذا المنزل  غير موجود', 200);
