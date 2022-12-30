@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ad;
+use App\Models\Agent;
 use App\Models\Apartment;
 use App\Models\City;
 use App\Models\Hotel;
@@ -13,6 +14,7 @@ use App\Models\ParcelCategory;
 use App\Models\ParcelType;
 use App\Models\SpaceType;
 use App\Models\State;
+use App\Models\User;
 use App\Traits\ApiMessage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -169,6 +171,21 @@ class GetController extends Controller
     {
         $ads = Ad::where('start', '<=', Carbon::now()->toDateString())->where('end', '>=', Carbon::now()->toDateString())->get();
         return $this->returnDataWithOutToken('ads', $ads);
+        // return Carbon::now()->toDateString();
+    }
+
+    // Count Agent
+    public function get_agent_count()
+    {
+        $agent_count = User::count();
+        return $this->returnDataWithOutToken('agent_count', $agent_count);
+    }
+
+    // Compant Count
+    public function get_company_profile()
+    {
+        $profile = User::find(1);
+        return $this->returnDataWithOutToken('profile', $profile);
         // return Carbon::now()->toDateString();
     }
 }

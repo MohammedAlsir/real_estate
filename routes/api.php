@@ -38,6 +38,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
     Route::get('apartments/{id}', 'GetController@get_apartments_by_id'); // == get parcel by id ==
 
     Route::get('ads', 'GetController@get_all_ads'); // == get ads==
+    Route::get('company/profile', 'GetController@get_company_profile'); // == get company Profile==
+    Route::get('agent', 'GetController@get_agent_count'); // == get company Profile==
 
 
 
