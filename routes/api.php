@@ -37,6 +37,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
     Route::post('apartments', 'GetController@get_apartments'); // == get all apartments ==
     Route::get('apartments/{id}', 'GetController@get_apartments_by_id'); // == get parcel by id ==
 
+    Route::get('ads', 'GetController@get_all_ads'); // == get ads==
+
+
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ad;
 use App\Models\Apartment;
 use App\Models\City;
 use App\Models\Hotel;
@@ -13,6 +14,7 @@ use App\Models\ParcelType;
 use App\Models\SpaceType;
 use App\Models\State;
 use App\Traits\ApiMessage;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GetController extends Controller
@@ -160,5 +162,13 @@ class GetController extends Controller
             return $this->returnData('apartment', $apartment);
         } else
             return $this->returnMessage(false, 'هذه الشقة غير موجودة', 200);
+    }
+
+    // Get All Ads
+    public function get_all_ads()
+    {
+        $ads = Ad::where('start', '<=', Carbon::now()->toDateString())->where('end', '>=', Carbon::now()->toDateString())->get();
+        return $this->returnDataWithOutToken('ads', $ads);
+        // return Carbon::now()->toDateString();
     }
 }

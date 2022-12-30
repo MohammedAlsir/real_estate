@@ -58,6 +58,13 @@
                         </ul>
                     </li>
 
+                    <li><a><i class="fa fa-cubes"></i>الاعلانات<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{route('ads.index')}}">كل الاعلانات</a></li>
+                            <li><a href="{{route('ads.create')}}">إضافة اعلان جديد</a></li>
+                        </ul>
+                    </li>
+
 
                     <!-- Hotels -->
 
