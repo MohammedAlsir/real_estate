@@ -117,7 +117,15 @@ class AgentController extends Controller
             return abort(404);
         }
         $agent = User::find($id);
-        return view('agents.show', compact('agent'));
+        $index_parcel = 1;
+        $index_house = 1;
+        $index_apartment = 1;
+        return view('agents.show', compact(
+            'agent',
+            'index_parcel',
+            'index_house',
+            'index_apartment',
+        ));
     }
 
     /**
