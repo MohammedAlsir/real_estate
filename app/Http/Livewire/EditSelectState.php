@@ -34,6 +34,9 @@ class EditSelectState extends Component
         } elseif ($model == "Apartment") {
             $state_id = Apartment::find($item_id)->city->state_id;
             $this->selectedCity = Apartment::find($item_id)->city_id;
+        } elseif ($model == "hotels") {
+            $state_id = Hotel::find($item_id)->city->state_id;
+            $this->selectedCity = Hotel::find($item_id)->city_id;
         }
 
         $this->city = City::where('state_id', $state_id)->get();

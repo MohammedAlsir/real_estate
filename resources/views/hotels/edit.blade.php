@@ -7,7 +7,7 @@
 {{-- @include('sweetalert::alert') --}}
 <div class="x_panel">
     <div class="x_title">
-        <h2>تعديل بيانات الشقة السكنية
+        <h2> تعديل بيانات الفندق
             {{-- <small> </small> --}}
         </h2>
 
@@ -15,7 +15,7 @@
     </div>
     <div class="x_content">
         <br />
-        <form method="POST" action="{{route('apartments.update',$apartment->id)}}"  enctype="multipart/form-data" class="form-horizontal form-label-left">
+        <form method="POST" action="{{route('hotels.update',$hotel->id)}}"  enctype="multipart/form-data" class="form-horizontal form-label-left">
             @csrf
             @method('put')
 
@@ -23,40 +23,50 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="neighborhood"> الوكيل
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input  value="{{$apartment->user->name}}" readonly
+                    <input  value="{{$hotel->user->name}}" readonly
                         class="form-control col-md-7 col-xs-12">
                 </div>
             </div>
 
-            @livewire('edit-select-state',['model'=> 'Apartment','item_id' => $apartment->id])
+            @livewire('edit-select-state',['model'=> 'hotels','item_id' => $hotel->id])
 
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="neighborhood"> الحي
                     <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input value="{{$apartment->neighborhood}}" type="text" name="neighborhood" id="neighborhood" required="required"
+                    <input value="{{$hotel->neighborhood}}" type="text" name="neighborhood" id="neighborhood" required="required"
                         class="form-control col-md-7 col-xs-12" value="">
                 </div>
             </div>
 
             <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> اسم الفندق
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text"  value="{{$hotel->name}}" name="name" id="name" required="required"
+                        class="form-control col-md-7 col-xs-12" value="">
+                </div>
+            </div>
+
+            {{-- <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="square"> المربع
                     <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input value="{{$apartment->square}}" type="text" name="square" id="square" required="required"
+                    <input value="{{$hotel->square}}" type="text" name="square" id="square" required="required"
                         class="form-control col-md-7 col-xs-12" value="">
                 </div>
-            </div>
+            </div> --}}
 
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="parcels_number">رقم المنزل
                     <span class="required"></span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input value="{{$apartment->apartment_number}}" type="text" name="apartment_number" id="parcels_number"
+                    <input value="{{$hotel->apartment_number}}" type="text" name="apartment_number" id="parcels_number"
                         class="form-control col-md-7 col-xs-12" value="">
                 </div>
             </div>
@@ -66,44 +76,36 @@
                     <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input value="{{$apartment->space}}" type="number" name="space" id="space" required="required"
+                    <input value="{{$hotel->space}}" type="number" name="space" id="space" required="required"
                         class="form-control col-md-7 col-xs-12" value="">
                 </div>
-            </div>
+            </div> --}}
 
-            {{-- <div class="form-group">
+            <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price"> النوع
                     <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <select  name="type" required="required" class="form-control col-md-7 col-xs-12">
                         <option  value="">اختر النوع</option>
-                        <option {{$apartment->type == "1"? "selected":""}} value="1">ايجار عادي</option>
-                        <option {{$apartment->type == "2"? "selected":""}} value="2">ايجار مفروش</option>
+                        <option {{$hotel->type == "1"? "selected":""}} value="1">شقة</option>
+                        <option {{$hotel->type == "2"? "selected":""}} value="2">جناح</option>
                     </select>
                 </div>
-            </div> --}}
+            </div>
 
-            {{-- <div class="form-group">
+            <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price"> السعر
                     <span class="required">*</span>
                 </label>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                    <input value="{{$apartment->price}}" type="number"  name="price" id="price" required="required"
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <input value="{{$hotel->price}}" type="number"  name="price" id="price" required="required"
                         class="form-control col-md-7 col-xs-12" value="">
                 </div>
-                <div class="col-md-2 col-sm-2 col-xs-6">
-                    <select name="rental" required="required"
-                        class="form-control col-md-7 col-xs-12">
-                            <option {{$apartment->rental == "monthly"? "selected":""}} value="monthly">شهريا</option>
-                            <option {{$apartment->rental == "yearly"? "selected":""}} value="yearly">سنويا</option>
-                            <option {{$apartment->rental == "daily"? "selected":""}} value="daily">يوميا</option>
-                    </select>
-                </div>
 
-            </div> --}}
+            </div>
 
-            @livewire('apartment-type', ['apartment_id' => $apartment->id])
+            {{-- @livewire('apartment-type', ['apartment_id' => $hotel->id]) --}}
 
 
 
@@ -114,7 +116,7 @@
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <textarea rows="5" name="features"  id="features" required
-                        class="form-control col-md-7 col-xs-12" >{{$apartment->features}}</textarea>
+                        class="form-control col-md-7 col-xs-12" >{{$hotel->features}}</textarea>
                 </div>
             </div>
 
@@ -122,7 +124,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-4">
-                    <img style="width: 150px; height: 150px; object-fit: cover;"  src="{{$apartment->image ?  asset('uploads/apartments/'.$apartment->image->photo) : ''}}" alt="لا يوجد صورة حاليا" srcset="">
+                    <img style="width: 150px; height: 150px; object-fit: cover;"  src="{{$hotel->image ?  asset('uploads/hotels/'.$hotel->image->photo) : ''}}" alt="لا يوجد صورة حاليا" srcset="">
                 </div>
             </div>
 

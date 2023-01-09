@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('apartment_id')->nullable()->constrained('apartments')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('house_id')->nullable()->constrained('houses')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('parcel_id')->nullable()->constrained('parcels')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('hotel_id')->nullable()->constrained('hotels')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

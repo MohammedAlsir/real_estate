@@ -25,18 +25,25 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
     Route::get('states', 'GetController@get_state'); // == get all State ==
     Route::get('state/{id}/cities', 'GetController@get_cities'); // == get all cities by state id ==
 
+    // parcels
     Route::get('parcels/catigories', 'GetController@get_parcels_category'); // == get space type==
     Route::get('parcels/type', 'GetController@get_parcels_type'); // == get space type==
-
-
     Route::post('parcels', 'GetController@get_parcels'); // == get all parcels ==
     Route::get('parcels/{id}', 'GetController@get_parcels_by_id'); // == get parcel by id ==
+
+    // houses
     Route::post('houses', 'GetController@get_houses'); // == get all houses ==
     Route::get('houses/{id}', 'GetController@get_houses_by_id'); // == get parcel by id ==
 
+    // apartments
     Route::post('apartments', 'GetController@get_apartments'); // == get all apartments ==
     Route::get('apartments/{id}', 'GetController@get_apartments_by_id'); // == get parcel by id ==
 
+    // hotels
+    Route::post('hotels', 'GetController@get_hotels'); // == get all hotels ==
+    Route::get('hotels/{id}', 'GetController@get_hotels_by_id'); // == get hotels by id ==
+
+    // for company
     Route::get('ads', 'GetController@get_all_ads'); // == get ads==
     Route::get('company/profile', 'GetController@get_company_profile'); // == get company Profile==
     Route::get('agent', 'GetController@get_agent_count'); // == get company Profile==
@@ -69,7 +76,14 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
         Route::post('apartment/create', 'ApartmentController@create_apartment'); // == create apartment ==
         Route::post('apartment/{id}/edit', 'ApartmentController@edit_apartment'); // == edit apartment ==
         Route::get('apartment/{id}/show', 'ApartmentController@show_apartment'); // == show apartment ==
-        Route::delete('apartment/{id}/delete', 'ApartmentController@delete_apartment'); // == delete  house ==
+        Route::delete('apartment/{id}/delete', 'ApartmentController@delete_apartment'); // == delete  apartment ==
+
+        // For hotels
+        Route::get('hotel/index', 'HotelController@index_hotels'); // == all  his hotels  ==
+        Route::post('hotel/create', 'HotelController@create_hotels'); // == create hotels ==
+        Route::post('hotel/{id}/edit', 'HotelController@edit_hotels'); // == edit hotels ==
+        Route::get('hotel/{id}/show', 'HotelController@show_hotels'); // == show hotels ==
+        Route::delete('hotel/{id}/delete', 'HotelController@delete_hotels'); // == delete  hotels ==
 
     });
 

@@ -127,6 +127,28 @@ class GetController extends Controller
         return $this->returnData('apartments', $final);
     }
 
+    // get all hotels
+    public function get_hotels(Request $request) // Get hotels
+    {
+        $hotels = Hotel::with(['state', 'city', 'user', 'image']);
+
+        if ($request->state_id)
+            $hotels->where('state_id', $request->state_id);
+        if ($request->city_id)
+            $hotels->where('city_id', $request->city_id);
+        if ($request->type)
+            $hotels->where('type', $request->type);
+
+
+        $final = $hotels->orderBy('id', 'DESC')->get();
+
+        foreach ($final as $one) {
+            $one['time'] = $one->created_at->diffForHumans();
+        }
+
+        return $this->returnData('hotels', $final);
+    }
+
 
     // GET By ID
     public function get_parcels_by_id($id) //
@@ -164,6 +186,18 @@ class GetController extends Controller
             return $this->returnData('apartment', $apartment);
         } else
             return $this->returnMessage(false, 'هذه الشقة غير موجودة', 200);
+    }
+
+    public function get_hotels_by_id($id) //
+    {
+        $hotels = Hotel::with(['state', 'city', 'user', 'image'])->find($id);
+        if ($hotels) {
+            $hotels->count += 1;
+            $hotels->save();
+            $hotels['time'] = $hotels->created_at->diffForHumans();
+            return $this->returnData('hotels', $hotels);
+        } else
+            return $this->returnMessage(false, 'هذا الفندق غير موجود', 200);
     }
 
     // Get All Ads

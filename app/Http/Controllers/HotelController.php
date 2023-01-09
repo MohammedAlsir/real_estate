@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Apartment;
+use App\Models\Hotel;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
-class ApartmentController extends Controller
+class HotelController extends Controller
 {
-    private $uploadPath = "uploads/apartments/";
+    private $uploadPath = "uploads/hotels/";
 
     /**
      * Display a listing of the resource.
@@ -23,22 +23,22 @@ class ApartmentController extends Controller
         $type = 0;
 
         // >الخاصة بالوكلاء
-        if ($request->apartment == 2) {
-            $apartments = Apartment::where('user_id', '!=', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        if ($request->hotel == 2) {
+            $hotels = Hotel::where('user_id', '!=', Auth::user()->id)->orderBy('id', 'DESC')->get();
             $type = 2;
         }
         // >الخاصة بالشركة و بالوكلاء
-        else if ($request->apartment == 3) {
-            $apartments = Apartment::orderBy('id', 'DESC')->get();
+        else if ($request->hotel == 3) {
+            $hotels = Hotel::orderBy('id', 'DESC')->get();
             $type = 3;
         }
         // الخاصة بالشركة
         else {
-            $apartments = Apartment::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+            $hotels = Hotel::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
             $type = 1;
         }
 
-        return view('apartments.index', compact('apartments', 'index', 'type'));
+        return view('hotels.index', compact('hotels', 'index', 'type'));
     }
 
     /**
@@ -48,7 +48,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('apartments.create');
+        return view('hotels.create');
     }
 
     /**
@@ -62,31 +62,23 @@ class ApartmentController extends Controller
         $request->validate([
             'price' => '', //11
             'features' => 'required', //10
-            'rental' => 'required', //9
             'type' => 'required', //8
-            'space' => 'required', //7
-            'apartment_number' => '', //5
-            'square' => 'required', //4
             'neighborhood' => 'required', //3
             'city' => 'required', //2
             'state' => 'required', //1
+            'name' => 'required', //0
         ]);
 
-        $apartment = new Apartment();
-        $apartment->price = $request->price;
-        $apartment->features = $request->features;
-        $apartment->rental_type = $request->rental_type;
-        $apartment->rental = $request->rental;
-        $apartment->type = $request->type;
-        $apartment->space = $request->space;
-        $apartment->apartment_number = $request->apartment_number;
-        $apartment->square = $request->square;
-        $apartment->neighborhood = $request->neighborhood;
-
-        $apartment->state_id = $request->state;
-        $apartment->city_id = $request->city;
-        $apartment->user_id = Auth::user()->id;
-        $apartment->save();
+        $hotel = new Hotel();
+        $hotel->name = $request->name;
+        $hotel->price = $request->price;
+        $hotel->features = $request->features;
+        $hotel->type = $request->type;
+        $hotel->neighborhood = $request->neighborhood;
+        $hotel->state_id = $request->state;
+        $hotel->city_id = $request->city;
+        $hotel->user_id = Auth::user()->id;
+        $hotel->save();
 
         // Start Photo
         $formFileName = "photo";
@@ -104,13 +96,13 @@ class ApartmentController extends Controller
         if ($fileFinalName != "") {
             $image = new Image();
             $image->photo = $fileFinalName;
-            $image->apartment_id = $apartment->id;
+            $image->hotel_id = $hotel->id;
             $image->save();
         }
         //End Photo
 
-        toastr()->info('تم اضافة الشقة السكنية', 'نجاح');
-        return redirect()->route('apartments.index');
+        toastr()->info('تم اضافة الفندق', 'نجاح');
+        return redirect()->route('hotels.index');
     }
 
     /**
@@ -132,8 +124,8 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        $apartment = Apartment::find($id);
-        return view('apartments.edit', compact('apartment'));
+        $hotel = Hotel::find($id);
+        return view('hotels.edit', compact('hotel'));
     }
 
     /**
@@ -148,38 +140,30 @@ class ApartmentController extends Controller
         $request->validate([
             'price' => '', //11
             'features' => 'required', //10
-            'rental' => 'required', //9
             'type' => 'required', //8
-            'space' => 'required', //7
-            'apartment_number' => '', //5
-            'square' => 'required', //4
             'neighborhood' => 'required', //3
             'city' => 'required', //2
             'state' => 'required', //1
+            'name' => 'required', //0
         ]);
 
-        $apartment =  Apartment::find($id);
-        $apartment->price = $request->price;
-        $apartment->features = $request->features;
-        $apartment->rental_type = $request->rental_type;
-        $apartment->rental = $request->rental;
-        $apartment->type = $request->type;
-        $apartment->space = $request->space;
-        $apartment->apartment_number = $request->apartment_number;
-        $apartment->square = $request->square;
-        $apartment->neighborhood = $request->neighborhood;
-
-        $apartment->state_id = $request->state;
-        $apartment->city_id = $request->city;
-        $apartment->save();
+        $hotel =  Hotel::find($id);
+        $hotel->name = $request->name;
+        $hotel->price = $request->price;
+        $hotel->features = $request->features;
+        $hotel->type = $request->type;
+        $hotel->neighborhood = $request->neighborhood;
+        $hotel->state_id = $request->state;
+        $hotel->city_id = $request->city;
+        $hotel->save();
 
         // Start Photo
         $formFileName = "photo";
         $fileFinalName = "";
         if ($request->$formFileName != "") {
             // Delete file if there is a new one
-            if ($apartment->image && $apartment->image->$formFileName != "") {
-                File::delete($this->uploadPath . $apartment->image->$formFileName);
+            if ($hotel->image && $hotel->image->$formFileName != "") {
+                File::delete($this->uploadPath . $hotel->image->$formFileName);
             }
             $fileFinalName = time() . rand(
                 1111,
@@ -190,22 +174,22 @@ class ApartmentController extends Controller
         }
 
         if ($fileFinalName != "") {
-            if ($apartment->image) {
-                $image =  Image::find($apartment->image->id);
+            if ($hotel->image) {
+                $image =  Image::find($hotel->image->id);
                 $image->photo = $fileFinalName;
                 // $image->parcel_id = $parcel->id;
                 $image->save();
             } else {
                 $image = new Image();
                 $image->photo = $fileFinalName;
-                $image->apartment_id = $apartment->id;
+                $image->hotel_id = $hotel->id;
                 $image->save();
             }
         }
         //End Photo
 
-        toastr()->info('تم تعديل بيانات الشقة السكنية', 'نجاح');
-        return redirect()->route('apartments.edit', $apartment->id);
+        toastr()->info('تم تعديل بيانات الفندق', 'نجاح');
+        return redirect()->route('hotels.edit', $hotel->id);
     }
 
     /**
@@ -216,8 +200,8 @@ class ApartmentController extends Controller
      */
     public function destroy($id)
     {
-        Apartment::find($id)->delete();
-        toastr()->info('تم حذف الشقة السكنية', 'نجاح');
-        return redirect()->route('apartments.index');
+        Hotel::find($id)->delete();
+        toastr()->info('تم حذف الفندق', 'نجاح');
+        return redirect()->route('hotels.index');
     }
 }

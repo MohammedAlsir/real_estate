@@ -9,773 +9,917 @@
 			"name": "For User without token",
 			"item": [
 				{
-					"name": "Get All Space Type",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/space/type",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"space",
-								"type"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All parcel catigories",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/parcels/catigories",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"parcels",
-								"catigories"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All parcel type",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/parcels/type",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"parcels",
-								"type"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All State",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/states",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"states"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All cities by satate id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/state/1/cities",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"state",
-								"1",
-								"cities"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All parcels",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "city_id",
-									"value": "3",
-									"type": "default",
-									"disabled": true
+					"name": "Public Data",
+					"item": [
+						{
+							"name": "Get All Space Type",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "parcel_type_id",
-									"value": "3",
-									"type": "default",
-									"disabled": true
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
 								},
-								{
-									"key": "parcel_category_id",
-									"value": "3",
-									"type": "default",
-									"disabled": true
-								},
-								{
-									"key": "state_id",
-									"value": "1",
-									"type": "default",
-									"disabled": true
-								},
-								{
-									"key": "space_type_id",
-									"value": "1",
-									"type": "default",
-									"disabled": true
-								},
-								{
-									"key": "id",
-									"value": "2",
-									"type": "default",
-									"disabled": true
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/space/type",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"space",
+										"type"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/parcels",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"parcels"
-							]
+						{
+							"name": "Get All State",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/states",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"states"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All cities by satate id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/state/1/cities",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"state",
+										"1",
+										"cities"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get parcel by id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
+					"name": "parcels",
+					"item": [
+						{
+							"name": "Get All parcel catigories",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/parcels/catigories",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"catigories"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
+						{
+							"name": "Get All parcel type",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/parcels/type",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"type"
+									]
+								}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/parcels/1",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"parcels",
-								"1"
-							]
+						{
+							"name": "Get All parcels",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "city_id",
+											"value": "3",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "parcel_type_id",
+											"value": "3",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "parcel_category_id",
+											"value": "3",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "state_id",
+											"value": "1",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "space_type_id",
+											"value": "1",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "2",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/parcels",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"parcels"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get parcel by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/parcels/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"1"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get All houses",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
+					"name": "houses",
+					"item": [
+						{
+							"name": "Get All houses",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "city_id",
+											"value": "3",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "state_id",
+											"value": "1",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "2",
+											"description": "النوع 1 ايجار او  2 بيع",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "rental",
+											"value": "yearly",
+											"description": "'daily', 'monthly', 'yearly'",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/houses",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"houses"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "city_id",
-									"value": "3",
-									"type": "default",
-									"disabled": true
+						{
+							"name": "Get house by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "state_id",
-									"value": "1",
-									"type": "default",
-									"disabled": true
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
 								},
-								{
-									"key": "type",
-									"value": "2",
-									"description": "النوع 1 ايجار او  2 بيع",
-									"type": "default",
-									"disabled": true
-								},
-								{
-									"key": "rental",
-									"value": "yearly",
-									"description": "'daily', 'monthly', 'yearly'",
-									"type": "default",
-									"disabled": true
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/houses/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"houses",
+										"1"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/houses",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"houses"
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get house by id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/houses/1",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"houses",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All apartments",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "city_id",
-									"value": "3",
-									"type": "default",
-									"disabled": true
+					"name": "apartments",
+					"item": [
+						{
+							"name": "Get All apartments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "state_id",
-									"value": "1",
-									"type": "default",
-									"disabled": true
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "city_id",
+											"value": "3",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "state_id",
+											"value": "1",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "2",
+											"description": "النوع 1 ايجار او  2 بيع",
+											"type": "default"
+										},
+										{
+											"key": "rental",
+											"value": "daily",
+											"description": "'daily', 'monthly', 'yearly'",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "rental_type",
+											"value": "2",
+											"description": " النوع 1 عادي او  2 مفروش",
+											"type": "default",
+											"disabled": true
+										}
+									]
 								},
-								{
-									"key": "type",
-									"value": "2",
-									"description": "النوع 1 ايجار او  2 بيع",
-									"type": "default"
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/apartments",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"apartments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get apartment by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "rental",
-									"value": "daily",
-									"description": "'daily', 'monthly', 'yearly'",
-									"type": "default",
-									"disabled": true
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
 								},
-								{
-									"key": "rental_type",
-									"value": "2",
-									"description": " النوع 1 عادي او  2 مفروش",
-									"type": "default",
-									"disabled": true
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/apartments/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"apartments",
+										"2"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/apartments",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"apartments"
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get apartment by id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
+					"name": "for company",
+					"item": [
+						{
+							"name": "Get all Ads  http://127.0.0.1:8000/api/v1/uploads/ad/444.png",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/ads",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"ads"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
+						{
+							"name": "Get company profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/company/profile",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"company",
+										"profile"
+									]
+								}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/apartments/2",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"apartments",
-								"2"
-							]
+						{
+							"name": "Get agent Count",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/agent",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"agent"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get all Ads  http://127.0.0.1:8000/api/v1/uploads/ad/444.png",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
+					"name": "hotels",
+					"item": [
+						{
+							"name": "Get All hotels",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "city_id",
+											"value": "3",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "state_id",
+											"value": "1",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "1",
+											"description": "النوع 1 شقة او  2 جناح",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/hotels",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"hotels"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/ads",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"ads"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get company profile",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
+						{
+							"name": "Get hotel by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/hotels/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"hotels",
+										"1"
+									]
 								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/company/profile",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"company",
-								"profile"
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get agent Count",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmM1NmViNDg0NTYyZWI2NmRiNTNjYjFiMmE2YzQ3Y2I4ODYwMzliZjZiZTZhNWI3MWJlMGNmYjNhY2Y5YWFhYjM1ZjkyNDI4NzdjMDhjNjMiLCJpYXQiOjE2NzA1MTc1NzMuMTg1NTUzLCJuYmYiOjE2NzA1MTc1NzMuMTg1NTY4LCJleHAiOjE3MDIwNTM1NzMuMDc3NDI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kP0vFuyyNef6IL2QGTvrqLmdGxCeyaj_imLQ8LkKbLf-LDbgmpRFbYvujbUUFZ2-EqoJfEKA7nRLyrDsJZrbi8bQvk-_pytMbcHUtPOOnED3X2LEVLQcE6aDBj901b_sPtKpOp9RLIVQi4_9Zz2RtgxTP-XWKNBaB3YezjtUAo61ga49-e3lJ2JO40CaBvDwplN7T6xgPFvnaPkcX5gWZax75NGjQh8OxQOseL5A5yyCfn6l81LKcVIGKDvhxoN6thfBMjgSvGiSMG1sRcjaNJXsuJHBZSEjDd3_BGc_q6Sfzo7dWJ-X52kX7z3pSs-RgEdc11C_EulB5vKpWzF_b54b8m4qKV4tMi5L6lKXnpts5K8Uys7GP_6ToagnTXN1zOBUn3_ctaQHR2TaKrYdlUO1f83FnRIA5i9jYHw3Jbfdc5Uw-VJW_5OxH5elctSc6AzJMzJSIAh2xCtD0tvVCnx3nA8rNKSt9hCQgvoLR0d8CCU1ho3jslXJ5qAO-Y0AtdL1EFmTgPvm4Zf83jA2-H7mE5UMa2Sc3oTN0jr2IB0CP3F4xkxY5ZMGpgESL1j3IFWvbQbs99YePI8z5bKkzDPhJjPLRocRwycywmVuGXt4eI-Mr__P_R8iVMs0LLd_N2Ng2OG2g_iRVWnFlk9gDm4gl7o1sTPRNxSWZRu6HUc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"type": "default",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/agent",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"agent"
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		},
@@ -2073,6 +2217,334 @@
 										"v1",
 										"apartment",
 										"7",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Hotels",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2QyZGI1MWJlMmJlN2FlZjQ5YWI0YTIyMGIyYzk3NzhlZWZkYjAwOTdmMGJlOWIxOWFkNGY3MDY1MjkwMTExMzM0MTZhODE4NDRiYjc0NzIiLCJpYXQiOjE2NzMyNjM5NTkuNzUyMjUyLCJuYmYiOjE2NzMyNjM5NTkuNzUyMjY0LCJleHAiOjE3MDQ3OTk5NTkuMzE5OTExLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ZKT8pxmS2W3Ufx26Sav7AaPgMw-p4diwjNGdvyCcVjvlTVUcE1ctaU8ElyoJDRP47Paz6R2ANVpP18GiYJFXwST-en4fa9tA4_byMovF0T6kXDiS28bkKsUJSrBLJZMZ5EvLebC8sdY-jlFFhrVuFrUd5d1b1g9IPFqfCUxXMnGKW_VPfhuY9uV1YQzAYkgAZnu6aCaHOCx8c52I7xS6K2atB3laTy8Qqv2ZVwaQrDvFZJMilifBq24Ciw_oy6vMPGHm-E56DHIftNo3-6ze1QkTxBfh0wRexNm9TlR9tch7k9ZfZ9IKuoPPRw1TxYkbAOj5iDbEiWE-Oy7oUzJ-1Lt22GwRFngJG509TZrborK-Yi5SMbowL9CpzAgCQTB_KEPDEglkpDjwYcEBOxpIFd86JlPi_of-SOTs2LR3JVCZp6GUEHLTvWXarJIFUtgPN8dFN_rjBGOoW4FYnWecy_QuvpdQ-IpMaiR7cHXsOEcC_xDPPj6H-L2X2izd3W5avK-hymovxs2YeMJ-MrI--vgtZf1X0R9q6qKQptB_UhXCvgkrB4ieae5sGKjCwD70pb2A8GQS8-RdcNoeSKrrVoPyBr_dVPWjoSH7fnEgXmoFkiaObp2ZtxBE_CUg5MmGceYBhoL5Fh3lMnIscNvgZU_w-tReNxYB1IQUcsNQ7io",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "السلام",
+											"type": "default"
+										},
+										{
+											"key": "type",
+											"value": "2",
+											"description": "النوع 1 شقة او  2 جناح",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "50000",
+											"type": "default"
+										},
+										{
+											"key": "features",
+											"value": "جناح ظريف",
+											"type": "default"
+										},
+										{
+											"key": "city",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "state",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "neighborhood",
+											"value": "الرياض",
+											"type": "default"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/F:/BBM/t.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/hotel/create",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"hotel",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2QyZGI1MWJlMmJlN2FlZjQ5YWI0YTIyMGIyYzk3NzhlZWZkYjAwOTdmMGJlOWIxOWFkNGY3MDY1MjkwMTExMzM0MTZhODE4NDRiYjc0NzIiLCJpYXQiOjE2NzMyNjM5NTkuNzUyMjUyLCJuYmYiOjE2NzMyNjM5NTkuNzUyMjY0LCJleHAiOjE3MDQ3OTk5NTkuMzE5OTExLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ZKT8pxmS2W3Ufx26Sav7AaPgMw-p4diwjNGdvyCcVjvlTVUcE1ctaU8ElyoJDRP47Paz6R2ANVpP18GiYJFXwST-en4fa9tA4_byMovF0T6kXDiS28bkKsUJSrBLJZMZ5EvLebC8sdY-jlFFhrVuFrUd5d1b1g9IPFqfCUxXMnGKW_VPfhuY9uV1YQzAYkgAZnu6aCaHOCx8c52I7xS6K2atB3laTy8Qqv2ZVwaQrDvFZJMilifBq24Ciw_oy6vMPGHm-E56DHIftNo3-6ze1QkTxBfh0wRexNm9TlR9tch7k9ZfZ9IKuoPPRw1TxYkbAOj5iDbEiWE-Oy7oUzJ-1Lt22GwRFngJG509TZrborK-Yi5SMbowL9CpzAgCQTB_KEPDEglkpDjwYcEBOxpIFd86JlPi_of-SOTs2LR3JVCZp6GUEHLTvWXarJIFUtgPN8dFN_rjBGOoW4FYnWecy_QuvpdQ-IpMaiR7cHXsOEcC_xDPPj6H-L2X2izd3W5avK-hymovxs2YeMJ-MrI--vgtZf1X0R9q6qKQptB_UhXCvgkrB4ieae5sGKjCwD70pb2A8GQS8-RdcNoeSKrrVoPyBr_dVPWjoSH7fnEgXmoFkiaObp2ZtxBE_CUg5MmGceYBhoL5Fh3lMnIscNvgZU_w-tReNxYB1IQUcsNQ7io",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "السلام",
+											"type": "default"
+										},
+										{
+											"key": "type",
+											"value": "1",
+											"description": "النوع 1 شقة او  2 جناح",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "500",
+											"type": "default"
+										},
+										{
+											"key": "features",
+											"value": "منزل ظريف",
+											"type": "default"
+										},
+										{
+											"key": "city",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "state",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "neighborhood",
+											"value": "الرياض",
+											"type": "default"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/F:/BBM/q.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/hotel/4/edit",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"hotel",
+										"4",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show by id  http://127.0.0.1:8000/api/v1/uploads/hotels/444.png",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2QyZGI1MWJlMmJlN2FlZjQ5YWI0YTIyMGIyYzk3NzhlZWZkYjAwOTdmMGJlOWIxOWFkNGY3MDY1MjkwMTExMzM0MTZhODE4NDRiYjc0NzIiLCJpYXQiOjE2NzMyNjM5NTkuNzUyMjUyLCJuYmYiOjE2NzMyNjM5NTkuNzUyMjY0LCJleHAiOjE3MDQ3OTk5NTkuMzE5OTExLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ZKT8pxmS2W3Ufx26Sav7AaPgMw-p4diwjNGdvyCcVjvlTVUcE1ctaU8ElyoJDRP47Paz6R2ANVpP18GiYJFXwST-en4fa9tA4_byMovF0T6kXDiS28bkKsUJSrBLJZMZ5EvLebC8sdY-jlFFhrVuFrUd5d1b1g9IPFqfCUxXMnGKW_VPfhuY9uV1YQzAYkgAZnu6aCaHOCx8c52I7xS6K2atB3laTy8Qqv2ZVwaQrDvFZJMilifBq24Ciw_oy6vMPGHm-E56DHIftNo3-6ze1QkTxBfh0wRexNm9TlR9tch7k9ZfZ9IKuoPPRw1TxYkbAOj5iDbEiWE-Oy7oUzJ-1Lt22GwRFngJG509TZrborK-Yi5SMbowL9CpzAgCQTB_KEPDEglkpDjwYcEBOxpIFd86JlPi_of-SOTs2LR3JVCZp6GUEHLTvWXarJIFUtgPN8dFN_rjBGOoW4FYnWecy_QuvpdQ-IpMaiR7cHXsOEcC_xDPPj6H-L2X2izd3W5avK-hymovxs2YeMJ-MrI--vgtZf1X0R9q6qKQptB_UhXCvgkrB4ieae5sGKjCwD70pb2A8GQS8-RdcNoeSKrrVoPyBr_dVPWjoSH7fnEgXmoFkiaObp2ZtxBE_CUg5MmGceYBhoL5Fh3lMnIscNvgZU_w-tReNxYB1IQUcsNQ7io",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/hotel/4/show",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"hotel",
+										"4",
+										"show"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all  hotels for this user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2QyZGI1MWJlMmJlN2FlZjQ5YWI0YTIyMGIyYzk3NzhlZWZkYjAwOTdmMGJlOWIxOWFkNGY3MDY1MjkwMTExMzM0MTZhODE4NDRiYjc0NzIiLCJpYXQiOjE2NzMyNjM5NTkuNzUyMjUyLCJuYmYiOjE2NzMyNjM5NTkuNzUyMjY0LCJleHAiOjE3MDQ3OTk5NTkuMzE5OTExLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ZKT8pxmS2W3Ufx26Sav7AaPgMw-p4diwjNGdvyCcVjvlTVUcE1ctaU8ElyoJDRP47Paz6R2ANVpP18GiYJFXwST-en4fa9tA4_byMovF0T6kXDiS28bkKsUJSrBLJZMZ5EvLebC8sdY-jlFFhrVuFrUd5d1b1g9IPFqfCUxXMnGKW_VPfhuY9uV1YQzAYkgAZnu6aCaHOCx8c52I7xS6K2atB3laTy8Qqv2ZVwaQrDvFZJMilifBq24Ciw_oy6vMPGHm-E56DHIftNo3-6ze1QkTxBfh0wRexNm9TlR9tch7k9ZfZ9IKuoPPRw1TxYkbAOj5iDbEiWE-Oy7oUzJ-1Lt22GwRFngJG509TZrborK-Yi5SMbowL9CpzAgCQTB_KEPDEglkpDjwYcEBOxpIFd86JlPi_of-SOTs2LR3JVCZp6GUEHLTvWXarJIFUtgPN8dFN_rjBGOoW4FYnWecy_QuvpdQ-IpMaiR7cHXsOEcC_xDPPj6H-L2X2izd3W5avK-hymovxs2YeMJ-MrI--vgtZf1X0R9q6qKQptB_UhXCvgkrB4ieae5sGKjCwD70pb2A8GQS8-RdcNoeSKrrVoPyBr_dVPWjoSH7fnEgXmoFkiaObp2ZtxBE_CUg5MmGceYBhoL5Fh3lMnIscNvgZU_w-tReNxYB1IQUcsNQ7io",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/hotel/index",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"hotel",
+										"index"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2QyZGI1MWJlMmJlN2FlZjQ5YWI0YTIyMGIyYzk3NzhlZWZkYjAwOTdmMGJlOWIxOWFkNGY3MDY1MjkwMTExMzM0MTZhODE4NDRiYjc0NzIiLCJpYXQiOjE2NzMyNjM5NTkuNzUyMjUyLCJuYmYiOjE2NzMyNjM5NTkuNzUyMjY0LCJleHAiOjE3MDQ3OTk5NTkuMzE5OTExLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ZKT8pxmS2W3Ufx26Sav7AaPgMw-p4diwjNGdvyCcVjvlTVUcE1ctaU8ElyoJDRP47Paz6R2ANVpP18GiYJFXwST-en4fa9tA4_byMovF0T6kXDiS28bkKsUJSrBLJZMZ5EvLebC8sdY-jlFFhrVuFrUd5d1b1g9IPFqfCUxXMnGKW_VPfhuY9uV1YQzAYkgAZnu6aCaHOCx8c52I7xS6K2atB3laTy8Qqv2ZVwaQrDvFZJMilifBq24Ciw_oy6vMPGHm-E56DHIftNo3-6ze1QkTxBfh0wRexNm9TlR9tch7k9ZfZ9IKuoPPRw1TxYkbAOj5iDbEiWE-Oy7oUzJ-1Lt22GwRFngJG509TZrborK-Yi5SMbowL9CpzAgCQTB_KEPDEglkpDjwYcEBOxpIFd86JlPi_of-SOTs2LR3JVCZp6GUEHLTvWXarJIFUtgPN8dFN_rjBGOoW4FYnWecy_QuvpdQ-IpMaiR7cHXsOEcC_xDPPj6H-L2X2izd3W5avK-hymovxs2YeMJ-MrI--vgtZf1X0R9q6qKQptB_UhXCvgkrB4ieae5sGKjCwD70pb2A8GQS8-RdcNoeSKrrVoPyBr_dVPWjoSH7fnEgXmoFkiaObp2ZtxBE_CUg5MmGceYBhoL5Fh3lMnIscNvgZU_w-tReNxYB1IQUcsNQ7io",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/hotel/4/delete",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"hotel",
+										"4",
 										"delete"
 									]
 								}
