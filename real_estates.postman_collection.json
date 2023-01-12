@@ -317,10 +317,9 @@
 											"disabled": true
 										},
 										{
-											"key": "id",
-											"value": "2",
-											"type": "default",
-											"disabled": true
+											"key": "neighborhood",
+											"value": "",
+											"type": "default"
 										}
 									]
 								},
@@ -447,6 +446,11 @@
 											"description": "'daily', 'monthly', 'yearly'",
 											"type": "default",
 											"disabled": true
+										},
+										{
+											"key": "neighborhood",
+											"value": "",
+											"type": "default"
 										}
 									]
 								},
@@ -579,6 +583,11 @@
 											"description": " النوع 1 عادي او  2 مفروش",
 											"type": "default",
 											"disabled": true
+										},
+										{
+											"key": "neighborhood",
+											"value": "",
+											"type": "default"
 										}
 									]
 								},
@@ -848,6 +857,11 @@
 											"description": "النوع 1 شقة او  2 جناح",
 											"type": "default",
 											"disabled": true
+										},
+										{
+											"key": "neighborhood",
+											"value": "الا",
+											"type": "default"
 										}
 									]
 								},

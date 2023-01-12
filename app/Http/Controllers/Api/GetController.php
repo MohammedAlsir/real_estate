@@ -68,6 +68,8 @@ class GetController extends Controller
             $parcels->where('parcel_category_id', $request->parcel_category_id);
         if ($request->space_type_id)
             $parcels->where('space_type_id', $request->space_type_id);
+        if ($request->neighborhood)
+            $parcels->where('neighborhood', 'like', '%' . $request->neighborhood . '%');
 
         $final = $parcels->orderBy('id', 'DESC')->get();
 
@@ -91,6 +93,8 @@ class GetController extends Controller
             $houses->where('type', $request->type);
         if ($request->rental)
             $houses->where('rental', $request->rental);
+        if ($request->neighborhood)
+            $houses->where('neighborhood', 'like', '%' . $request->neighborhood . '%');
 
         $final = $houses->orderBy('id', 'DESC')->get();
 
@@ -117,6 +121,8 @@ class GetController extends Controller
             $apartments->where('rental', $request->rental);
         if ($request->rental_type)
             $apartments->where('rental_type', $request->rental_type);
+        if ($request->neighborhood)
+            $apartments->where('neighborhood', 'like', '%' . $request->neighborhood . '%');
 
         $final = $apartments->orderBy('id', 'DESC')->get();
 
@@ -138,6 +144,8 @@ class GetController extends Controller
             $hotels->where('city_id', $request->city_id);
         if ($request->type)
             $hotels->where('type', $request->type);
+        if ($request->neighborhood)
+            $hotels->where('neighborhood', 'like', '%' . $request->neighborhood . '%');
 
 
         $final = $hotels->orderBy('id', 'DESC')->get();
