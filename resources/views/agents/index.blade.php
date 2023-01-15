@@ -18,39 +18,45 @@
 
                             <table id="datatable-keytable" class="table table-striped table-bordered">
                                 <thead>
-                                <tr>
-                                    <th>الرقم</th>
-                                    <th>اسم الوكيل </th>
-                                    <th>الاسم التجاري</th>
-                                    <th>رقم الهاتف</th>
-                                    <th>تاريخ الاضافة</th>
-                                    <th>العمليات</th>
-                                </tr>
+                                    <tr>
+                                        <th>الرقم</th>
+                                        <th>اسم الوكيل </th>
+                                        <th>الاسم التجاري</th>
+                                        <th>رقم الهاتف</th>
+                                        <th>الحالة</th>
+                                        <th>تاريخ الاضافة</th>
+                                        <th>العمليات</th>
+                                    </tr>
                                 </thead>
 
 
                                 <tbody>
-                                @foreach ($agents as $item)
-                                    <tr>
-                                        <td>{{$index++}}</td>
-                                        <td>{{$item->name}}</td>
-                                        <td>{{$item->trade_name}}</td>
-                                        <td>{{$item->phone}}</td>
-                                        <td>{{$item->created_at}}</td>
-                                        <td>
-                                            <form action="{{route('agent.destroy',$item->id)}}" method="POST">
-                                                {{ csrf_field()}}
-                                                {{ method_field('delete') }}
-                                                <a href="{{route('agent.show',$item->id)}}" class="btn btn-primary sm-btn-sm btn-sm">
-                                                    <i class="fa fa-eye"></i>
-                                                </a>
-                                                <a href="{{route('agent.edit',$item->id)}}" class="btn btn-sm btn-success"><i class="fa fa-edit m-right-xs"></i>&nbsp; </a>
-                                                <button type="button" class="show_confirm btn btn-sm btn-danger"><i class="fa fa-remove m-right-xs"></i>&nbsp; </button>
-                                            </form>
+                                    @foreach ($agents as $item)
+                                        <tr>
+                                            <td>{{ $index++ }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->trade_name }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>@livewire('agent-status', ['agent' => $item], key($item->id)) </td>
+                                            <td>{{ $item->created_at }}</td>
+                                            <td>
+                                                <form action="{{ route('agent.destroy', $item->id) }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('delete') }}
+                                                    <a href="{{ route('agent.show', $item->id) }}"
+                                                        class="btn btn-primary sm-btn-sm btn-sm">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                    <a href="{{ route('agent.edit', $item->id) }}"
+                                                        class="btn btn-sm btn-success"><i
+                                                            class="fa fa-edit m-right-xs"></i>&nbsp; </a>
+                                                    <button type="button" class="show_confirm btn btn-sm btn-danger"><i
+                                                            class="fa fa-remove m-right-xs"></i>&nbsp; </button>
+                                                </form>
 
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                            </td>
+                                        </tr>
+                                    @endforeach
 
 
                                 </tbody>

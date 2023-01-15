@@ -3,11 +3,12 @@
 namespace App\Http\Middleware;
 
 use App\Traits\ApiMessage;
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class StatusUser
+class ExpiredMiddleware
 {
     use ApiMessage;
 
@@ -20,9 +21,12 @@ class StatusUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->status == "on")
+        //        28 > 29
+        if (Auth::user()->subscription_end >= Carbon::now()->toDateString())
             return $next($request);
         else
-            return $this->returnMessage(false, 'عفوا ,هذا الحساب غير مفعل الرجاء مراجعة ادارة التطبيق  ', 200);
+            // subscription_end
+            // return $this->returnMessage(false, Auth::user()->subscription_end . ' and ' . Carbon::now()->toDateString(), 200);
+            return $this->returnMessage(false, 'عفوا ,هذا انتهت صلاحية حسابك الرجاء مراجعة ادارة التطبيق  ', 200);
     }
 }

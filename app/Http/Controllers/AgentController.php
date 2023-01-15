@@ -59,6 +59,7 @@ class AgentController extends Controller
             'email' => 'unique:users',
             'password' => 'required',
             'status' => '',
+            'subscription_end' => 'required'
         ], [
             'email.unique' => 'اسم المستخدم موجود مسبقا'
         ]);
@@ -76,7 +77,9 @@ class AgentController extends Controller
         $agent->email = $request->email;
         $agent->password = $request->password;
         $agent->status = $request->status;
+        $agent->subscription_end = $request->subscription_end;
         $agent->type = 2;
+
 
         // Start of Upload Files
         $formFileName = "logo";
@@ -169,6 +172,8 @@ class AgentController extends Controller
             'password' => '',
             'email' => ['required', Rule::unique('users')->ignore($agent)],
             'status' => '',
+            'subscription_end' => 'required'
+
         ], [
             'email.unique' => 'اسم المستخدم موجود مسبقا'
         ]);
@@ -187,6 +192,8 @@ class AgentController extends Controller
             $agent->password = $request->password;
         }
         $agent->status = $request->status;
+        $agent->subscription_end = $request->subscription_end;
+
 
         // Start of Upload Files
         $formFileName = "logo";

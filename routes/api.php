@@ -53,7 +53,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
 
 
     // For Authentication
-    Route::group(['middleware' => ['auth:api', 'status']], function () {
+    Route::group(['middleware' => ['auth:api', 'expired', 'status']], function () {
         Route::get('profile', 'AuthController@get_profile');
         Route::post('profile', 'AuthController@edit_profile');
 
