@@ -50,7 +50,7 @@ class AgentController extends Controller
             'address' => 'required',
             'license' => 'required',
             'phone' => 'required',
-            'whatsapp_phone' => '',
+            'whatsapp_phone' => 'max:9|min:9',
             'telegram_phone' => '',
             'personal_email' => '',
             'twitter_account' => '',
@@ -61,7 +61,9 @@ class AgentController extends Controller
             'status' => '',
             'subscription_end' => 'required'
         ], [
-            'email.unique' => 'اسم المستخدم موجود مسبقا'
+            'email.unique' => 'اسم المستخدم موجود مسبقا',
+            'whatsapp_phone.max' => 'رقم الواتساب اطول من المطلوب',
+            'whatsapp_phone.min' => 'رقم الواتساب اقصر من المطلوب',
         ]);
         $agent = new User();
         $agent->trade_name = $request->trade_name;
@@ -163,7 +165,7 @@ class AgentController extends Controller
             'address' => 'required',
             'license' => 'required',
             'phone' => 'required',
-            'whatsapp_phone' => '',
+            'whatsapp_phone' => 'max:9|min:9',
             'telegram_phone' => '',
             'personal_email' => '',
             'twitter_account' => '',
@@ -175,7 +177,9 @@ class AgentController extends Controller
             'subscription_end' => 'required'
 
         ], [
-            'email.unique' => 'اسم المستخدم موجود مسبقا'
+            'email.unique' => 'اسم المستخدم موجود مسبقا',
+            'whatsapp_phone.max' => 'رقم الواتساب اطول من المطلوب',
+            'whatsapp_phone.min' => 'رقم الواتساب اقصر من المطلوب',
         ]);
         $agent->trade_name = $request->trade_name;
         $agent->name = $request->name;

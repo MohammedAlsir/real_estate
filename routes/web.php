@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('home');
 });
+// privacy policy
+Route::get('privacy_policy', function () {
+    return view('privacy_policy');
+});
+
 
 Auth::routes();
 
