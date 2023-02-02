@@ -17,6 +17,7 @@ class AuthController extends Controller
     use ApiMessage;
     private $uploadPath = "uploads/users/";
     private $uploadPathLogo = "uploads/agents/logo/";
+    private $uploadPathAgent = "uploads/agents/";
 
 
     /*
@@ -44,7 +45,34 @@ class AuthController extends Controller
             // == there is error ==
             return $this->returnMessage(false, 'عفوا , هناك خطأ في اسم المستخدم كلمة المرور   ', 200);
         // == end attempt ==
-    }
+    } // end of login
+
+    public function register(Request $request)
+    {
+        $request->validate(
+            [
+                'name'      => 'required',
+                'email'     => 'required|unique:users',
+                'password'  => 'required|confirmed',
+                'phone'     => 'required',
+
+            ]
+        );
+
+        // == add new user  ==
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->phone = $request->phone;
+        $user->type = 2;
+        $user->status = "pending";
+        $user->save();
+
+        $token = $user->createToken('Token')->accessToken;
+        // == return user data with token ==
+        return $this->returnData('user', $user, $token);
+    } // end of register
 
 
     // Show Profile
@@ -74,6 +102,8 @@ class AuthController extends Controller
                 'password'  => 'string|confirmed',
                 'phone'     => '',
 
+                'personal_document_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'commercial_license_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
@@ -142,7 +172,7 @@ class AuthController extends Controller
         }
         // For Photo
 
-        // For Photo
+        // For logo
         $formFileNameLogo = "logo";
         $fileFinalNameLogo = "";
         if ($request->$formFileNameLogo != "") {
@@ -161,7 +191,52 @@ class AuthController extends Controller
         if ($fileFinalNameLogo != "") {
             $user->logo = $fileFinalNameLogo;
         }
-        // For Photo
+        // For logo
+
+        // For personal_document_image
+        $formFileNamepersonal_document = "personal_document_image";
+        $fileFinalName_personal_document = "";
+        if ($request->$formFileNamepersonal_document != "") {
+            // Delete file if there is a new one
+            if ($user->$formFileNamepersonal_document) {
+                File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->personal_document_image);
+            }
+            $fileFinalName_personal_document = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileNamepersonal_document)->getClientOriginalExtension();
+            $path = $this->uploadPathAgent;
+            $request->file($formFileNamepersonal_document)->move($path, $fileFinalName_personal_document);
+        }
+
+        if ($fileFinalName_personal_document != "") {
+            $user->personal_document_image = $fileFinalName_personal_document;
+        }
+        // For personal_document_image
+
+
+        // For commercial_license_image
+        $formFileName_commercial_license = "commercial_license_image";
+        $fileFinalName_commercial_license = "";
+        if ($request->$formFileName_commercial_license != "") {
+            // Delete file if there is a new one
+            if ($user->$formFileName_commercial_license) {
+                File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->commercial_license_image);
+            }
+            $fileFinalName_commercial_license = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName_commercial_license)->getClientOriginalExtension();
+            $path = $this->uploadPathAgent;
+            $request->file($formFileName_commercial_license)->move($path, $fileFinalName_commercial_license);
+        }
+
+        if ($fileFinalName_commercial_license != "") {
+            $user->commercial_license_image = $fileFinalName_commercial_license;
+        }
+        // For commercial_license_image
+
+        // save
         $user->save();
         // == return user data with token ==
         return $this->returnData('user', $user);

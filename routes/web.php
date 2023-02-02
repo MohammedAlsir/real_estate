@@ -38,11 +38,18 @@ Route::namespace('App\Http\Controllers')->middleware(['auth', 'admin'])->group(f
     // Delete image by ID
     // Route::delete('delete/image/{id}', 'HotelController@delete_image')->name('delete.image');
     Route::resource('state/city', 'StateCityController');
+
     Route::resource('agent', 'AgentController');
+
+    Route::get('payment/{id}', 'AgentController@payment')->name('payment');
+
     Route::resource('parcel', 'ParcelController');
+
     // Route::get('index/parcel/{id?}', 'ParcelController@index')->name('parcel.index');
     Route::resource('houses', 'HouseController');
+
     Route::resource('apartments', 'ApartmentController');
+
     Route::resource('hotels', 'HotelController');
 
     Route::resource('ads', 'AdsController');

@@ -37,7 +37,14 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->trade_name }}</td>
                                             <td>{{ $item->phone }}</td>
-                                            <td>@livewire('agent-status', ['agent' => $item], key($item->id)) </td>
+                                            <td>
+                                                @if ($item->status == 'pending')
+                                                    قيد الانتظار
+                                                @else
+                                                    @livewire('agent-status', ['agent' => $item], key($item->id))
+                                                @endif
+
+                                            </td>
                                             <td>{{ $item->created_at }}</td>
                                             <td>
                                                 <form action="{{ route('agent.destroy', $item->id) }}" method="POST">

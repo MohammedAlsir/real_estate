@@ -35,6 +35,9 @@ return new class extends Migration
             $table->string('twitter_account')->nullable();
             $table->string('photo')->nullable();
 
+
+
+
             $table->string('subscription_end')->nullable();
 
 

@@ -98,7 +98,8 @@ class SettingController extends Controller
     public function settings()
     {
         $setting = User::find(1);
-        return view('setting.index', compact('setting'));
+        $site_setting = Setting::find(1);
+        return view('setting.index', compact('setting', 'site_setting'));
     }
 
     public function settings_edit(Request $request)
@@ -129,6 +130,9 @@ class SettingController extends Controller
         $setting->twitter_account = $request->twitter_account;
         $setting->facebook_account = $request->facebook_account;
 
+
+
+
         // Start of Upload Files
         $formFileName = "logo";
         $fileFinalName = "";
@@ -152,9 +156,16 @@ class SettingController extends Controller
 
         $setting->save();
 
+
+        $set = Setting::find(1);
+        $set->bank_name = $request->bank_name;
+        $set->bank_account = $request->bank_account;
+        $set->entry_fee = $request->entry_fee;
+        $set->save();
+
         toastr()->info('تم تعديل البيانات الاساسية  ', 'نجاح');
 
-        return view('setting.index', compact('setting'));
+        return redirect()->route('settings');
     }
 
 

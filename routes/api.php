@@ -19,6 +19,8 @@ use \Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], function () {
 
     Route::post('login', 'AuthController@login'); // == Login ==
+    Route::post('register', 'AuthController@register'); // == register ==
+
 
     // Get Public Data
     Route::get('space/type', 'GetController@get_space_type'); // == get space type==
@@ -53,9 +55,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
 
 
     // For Authentication
-    Route::group(['middleware' => ['auth:api', 'expired', 'status']], function () {
-        Route::get('profile', 'AuthController@get_profile');
-        Route::post('profile', 'AuthController@edit_profile');
+    Route::get('profile', 'AuthController@get_profile')->middleware('auth:api');
+    Route::post('profile', 'AuthController@edit_profile')->middleware('auth:api');
+    Route::get('payment_data', 'GetController@payment_data')->middleware('auth:api'); // == get payment data ==
+    Route::post('payment', 'PostController@payment')->middleware('auth:api'); // == post payment  ==
+    Route::group(['middleware' => ['auth:api', 'status', 'expired']], function () {
 
         // For Parcel
         Route::get('parcel/index', 'ParcelController@index_parcels'); // == all  his Parcel  ==

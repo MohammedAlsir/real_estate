@@ -12,6 +12,7 @@ use App\Models\House;
 use App\Models\Parcel;
 use App\Models\ParcelCategory;
 use App\Models\ParcelType;
+use App\Models\Setting;
 use App\Models\SpaceType;
 use App\Models\State;
 use App\Models\User;
@@ -229,5 +230,12 @@ class GetController extends Controller
         $profile = User::find(1);
         return $this->returnDataWithOutToken('profile', $profile);
         // return Carbon::now()->toDateString();
+    }
+
+    // payment_data
+    public function payment_data()
+    {
+        $data = Setting::select('bank_name', 'bank_account', 'entry_fee')->find(1);
+        return $this->returnDataWithOutToken('data', $data);
     }
 }

@@ -14,6 +14,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
 
+
     public function parcel()
     {
         return $this->hasMany(Parcel::class);
@@ -22,6 +23,11 @@ class User extends Authenticatable
     public function house()
     {
         return $this->hasMany(House::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasMany(Payment::class);
     }
 
     public function apartment()
@@ -48,6 +54,8 @@ class User extends Authenticatable
         'email',
         'password',
         'status',
+        'personal_document_image',
+        'commercial_license_image',
     ];
 
     /**

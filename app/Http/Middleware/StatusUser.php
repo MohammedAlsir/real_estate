@@ -22,6 +22,8 @@ class StatusUser
     {
         if (Auth::user()->status == "on")
             return $next($request);
+        elseif (Auth::user()->status == "pending")
+            return $this->returnMessage(false, 'عفوا ,لم يتم تفعيل هذا الحساب بعد  الرجاء اكمال إجراء الدفع و ارفاق صورة من الاشعار  ', 200);
         else
             return $this->returnMessage(false, 'عفوا ,هذا الحساب غير مفعل الرجاء مراجعة ادارة التطبيق  ', 200);
     }

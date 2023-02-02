@@ -91,6 +91,14 @@
                             <li role="presentation" class=""><a href="#appartment" role="tab" id="profile-tab"
                                     data-toggle="tab" aria-expanded="true">الشقق السكنية</a>
                             </li>
+
+                            <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab"
+                                    data-toggle="tab" aria-expanded="true">البيانات الشخصية</a>
+                            </li>
+
+                            <li role="presentation" class=""><a href="#payment" role="tab" id="profile-tab"
+                                    data-toggle="tab" aria-expanded="true">اشعارات الدفع</a>
+                            </li>
                         </ul>
                         <div id="myTabContent" class="tab-content">
                             <div role="tabpanel" class="tab-pane fade active in" id="parcel" aria-labelledby="home-tab">
@@ -764,6 +772,138 @@
                                 <!-- end user projects -->
 
                             </div>
+
+                            <div role="tabpanel" class="tab-pane fade " id="profile" aria-labelledby="profile-tab">
+
+                                <!-- start user projects -->
+
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th colspan="2"><a href="{{ route('agent.edit', $agent->id) }}">اضغط هنا
+                                                لتعديل البيانات</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th>الاسم التجاري </th>
+                                        <td>{{ $agent->trade_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>اسم الوكيل </th>
+                                        <td>{{ $agent->name }}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>العنوان </th>
+                                        <td>{{ $agent->address }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>الترخيص </th>
+                                        <td>{{ $agent->license }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>رقم الهاتف </th>
+                                        <td>{{ $agent->phone }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>رقم الواتساب </th>
+                                        <td>{{ $agent->whatsapp_phone }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>رقم التلغرام </th>
+                                        <td>{{ $agent->telegram_phone }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>البريد الالكتروني </th>
+                                        <td>{{ $agent->personal_email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>حساب تويتر </th>
+                                        <td>{{ $agent->twitter_account }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> حساب الفيسبوك </th>
+                                        <td>{{ $agent->facebook_account }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> الشعار </th>
+                                        <td>
+                                            <img style="width: 150px; height: 150px; object-fit: cover;"
+                                                src="{{ asset('uploads/agents/logo/' . $agent->logo) }}"
+                                                alt="لا يوجد حاليا" srcset="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th> اسم المستخدم </th>
+                                        <td>{{ $agent->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> الحالة </th>
+                                        <td>
+                                            <input disabled readonly name="status"
+                                                {{ $agent->status == 'on' ? 'checked' : '' }} type="checkbox"
+                                                class="js-switch" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th> تاريخ نهاية الاشتراك </th>
+                                        <td>{{ $agent->subscription_end }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> وثيقة شخصية </th>
+                                        <td>
+                                            <img style="width: 150px; height: 150px; object-fit: cover;"
+                                                src="{{ asset('uploads/agents/' . $agent->personal_document_image) }}"
+                                                alt="لا يوجد  حاليا" srcset="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th> الرخصة التجارية </th>
+                                        <td>
+                                            <img style="width: 150px; height: 150px; object-fit: cover;"
+                                                src="{{ asset('uploads/agents/' . $agent->commercial_license_image) }}"
+                                                alt="لا يوجد  حاليا" srcset="">
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <!-- end user projects -->
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade " id="payment" aria-labelledby="profile-tab">
+
+                                <!-- start user projects -->
+
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>التاريخ</th>
+                                        <th>صورة الاشعار</th>
+                                    </tr>
+                                    @foreach ($agent->payment as $payment)
+                                        <tr>
+                                            <td>{{ $payment->created_at }}</td>
+                                            <td>
+                                                <a href="{{ route('payment', $payment->id) }}">الاشعار</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+
+                                    {{-- <tr>
+                                        <th> وثيقة شخصية </th>
+                                        <td>
+                                            <img style="width: 150px; height: 150px; object-fit: cover;"
+                                                src="{{ asset('uploads/agents/' . $agent->personal_document_image) }}"
+                                                alt="لا يوجد  حاليا" srcset="">
+                                        </td>
+                                    </tr> --}}
+
+
+                                </table>
+                                <!-- end user projects -->
+
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

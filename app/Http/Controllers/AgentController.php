@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AgentRequest;
 use App\Models\Agent;
+use App\Models\Payment;
 use App\Models\User;
 use App\Traits\Oprations;
 use Illuminate\Http\Request;
@@ -237,5 +238,12 @@ class AgentController extends Controller
         User::find($id)->delete();
         toastr()->info('تم حذف  الوكيل العقاري ', 'نجاح');
         return redirect()->route('agent.index');
+    }
+
+
+    public function payment($id)
+    {
+        $payment = Payment::find($id);
+        return view('agents.payment', compact('payment'));
     }
 }
