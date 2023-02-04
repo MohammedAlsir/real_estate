@@ -1379,7 +1379,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "m7mda",
+											"value": "m7md",
 											"type": "default"
 										},
 										{
@@ -1400,6 +1400,33 @@
 										{
 											"key": "password_confirmation",
 											"value": "12345",
+											"type": "default"
+										},
+										{
+											"key": "personal_document_image",
+											"description": "وثيقة شخصية  -- uploads/agents/4774,png/",
+											"type": "file",
+											"src": "/F:/BBM/a4.jpg"
+										},
+										{
+											"key": "commercial_license_image",
+											"description": " الرخصة التجارية -- uploads/agents/4774,png/",
+											"type": "file",
+											"src": "/F:/BBM/v.jpg"
+										},
+										{
+											"key": "trade_name",
+											"value": "Mohammed company",
+											"type": "default"
+										},
+										{
+											"key": "address",
+											"value": "Khartoum",
+											"type": "default"
+										},
+										{
+											"key": "license",
+											"value": "123456789",
 											"type": "default"
 										}
 									]
@@ -1579,20 +1606,6 @@
 											"type": "file",
 											"src": "/F:/BBM/n.jpg",
 											"disabled": true
-										},
-										{
-											"key": "personal_document_image",
-											"description": "وثيقة شخصية  -- uploads/agents/4774,png/",
-											"type": "file",
-											"src": "/F:/BBM/t.jpg",
-											"disabled": true
-										},
-										{
-											"key": "commercial_license_image",
-											"description": " الرخصة التجارية -- uploads/agents/4774,png/",
-											"type": "file",
-											"src": "/F:/BBM/x.jpg",
-											"disabled": true
 										}
 									]
 								},
@@ -1623,16 +1636,6 @@
 						{
 							"name": "create",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDk1ZDc4YjU2MTM4N2ZhMTJlMDlkMjVjYzBkODZiMDNmZDg1ZDY4MTk2ZDViYzM1NjJmODI4N2FiYTAyY2FiN2UwNGNlOTE5NGFlZWIwNTUiLCJpYXQiOjE2NzM4MTAxMTMuMzEwMDAxLCJuYmYiOjE2NzM4MTAxMTMuMzEwMDA3LCJleHAiOjE3MDUzNDYxMTIuODEzOTYxLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.DHwdiLjphDKCrOehV2Hi3dgcnS-1ZMWki74IBskEcg1YvfsUHsqbIOXqRGnJSjhcPnTB-sFIaMbqp6xAWk-ep8LDhge0JhfE-iNysvulWwXbRlTYMzZfVAcKieCmuQNNcwik29P2T9jxVJ1D2LgtveY03BAUy284sCzsAC5heDTNX7kraqT2BN2lEVpfCd_dtg266kGbr9maaq7Bh4BYHEN2wdNsuKe1cugIVubI1xVP6XChv4Uu9ZEI7AeO0FY4S-whzI25bBqWNedP0wllot84s2z914FFjRBeXcLA-zhJMS6uuZ_0hJHpbYYlqhNIIEy_hjN018r95T88XfmLdAf-shzYbd2UW_qc5p_KxLKXjLBX5yulLwjaWqR1Ue8F6ABCcGeqTfwgYMRqiarhc8GGNzZvxGEsDckl1n9ajbwCgwVtUqUoWYG4AnuMQrTFBBOx6hwuiQ10t-hbxv9HkSS7ZYOfZYnSVFYJTL69WZxHurdBQzB_zkaoDfS6FTnAQbnf2SWo8KlndOZBDXHL2BHbwDXl8tDs16acQJGKBkP757f2IIKWPOFc5Umy85oB9XXgRB66wVL8rDwP7XGhqdyT-ybbOT7ue6H02Vjn_B7uPlWgnl4xTZ_b5hq3bIUulbsX18bWMpghu7OK579-q4YmBG_bJaJ917eSz4-BeUQ",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -2725,7 +2728,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNTAwNGQyN2I5Y2IzNmExYmNjOWRlYTBiYjY0Y2FlODE4ZjMzNjViYTA0NDIzYmVjYjdhMzhkMWZmZmIwZTBiZjY4Mjk0ZjQ5NTYzZmMzYmUiLCJpYXQiOjE2NzUyNjkwOTUuMjAzNDkzLCJuYmYiOjE2NzUyNjkwOTUuMjAzNTAzLCJleHAiOjE3MDY4MDUwOTQuODQzNDE1LCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.DOiy4QeBtKu-E9s5MTW5EffYPTNOQYEdMpGqKXA9imWDMzKZd_KNJnQWEM_Z_2MXIUEQZ7aI5QvlhTUhi0ZUKShSiM9QMDmIZHVBq6m5ykfyEoP_Qs6pVf-8-v7XqTGsdbqfArbJW3ArRdFTX32oOzHhqeHOAaFD_By_8Xga_RwkkASWPMuO6-xEjMiqkOp9UQpMqyJ5KnpE2RGxYsEQzCNgRL_90ND0qX50zWSfKq5KHgTSU_JCFs7kz-HLrLgPQVgFCpeItbgA1ZvWc7d0X9ACWpPoJde7a8BNYLLUy9_obGe2KY4yhm0dx-rn6YX4V8oDEmPVNSWSB9tOtbhhh-LeJiX4MwYUdURfgMUzrXAFmiBkNJC4VbxUkz1byr1qZwn0cqKD_8CWQ3ybuHbpSZMLt_BwtXTF2Fa3N4AxoXxTxph7Mp5CHGyr_o76quovGcCqfBtNV8dqWuWjx55TN5Wo6T_gL_bcBMJrNFuDCzK-h39n8lI_FhBktQnBqzoL1IeJwf5IDyzjkQ67WB1cLllry4xjqfJdRMuJliBJAkT9lN3GuaPvI1dcZMNUfjJ5S-aSa2REGl4BsGOAM5W8mreTopoxiL4N4nblUCJEgEpAP1m_fuvnn-J8TkkaXgmkB-3Vy0J4eBTmamz4hflzZHdgoS-sHxRNs9wDbVlLKGE",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNmRkZDQ5MTM2ZDBjYTg3NTAzMjljYTk5Y2FiMGZlZTM2NzI0NzBmMmNiYTQxMDRkOTJhZWM2MDY5ZjcyMDMzNTZhZGZmN2U3YTg2ZmUyYzUiLCJpYXQiOjE2NzU1MDk3MjkuODc5NTg4LCJuYmYiOjE2NzU1MDk3MjkuODc5NTk0LCJleHAiOjE3MDcwNDU3MjkuODAzMDEsInN1YiI6IjExIiwic2NvcGVzIjpbXX0.NaFVEtGfNiF6srFDGooCX7G4AtKao5YGnQeLKL74oa3Ug-p6ewqQ73yyCwqQmV9fjg6y_kwy6O9k5lDlnjVY915m_RoJB9w5yUSPEbA_ys8_DV2o1kOSIzUxIV0wKnV14sS2KJJl2VBbioSIaXOCgHOYbWD0UFDBgQjnaP-iX_84bHp9CgpSdGL0-hmkgHljGdBYsZkHMRKuhngV-9Uva9dQkcG4x8BCKJ7nXCuV6DqYrDCuPnxXd2kLKV9roaU9eBlR6WlWjCsXnoZOEzxYArKSgP41Y4sRy2wcvNsGPTzJhGp5hsHpK20UGxnmqCsVZNtBuJkVDp0_Nba2ekd_hAWNKjUSh5yIqGYsa-dnGG7l_ZrQpDTelAsfnElkpiefGHowAymE9jaT9T5GLwalFlCa-L6RXCrRzq3S5RGOMllbubnRRda3eMepsOCnqYt890MNPw-kYbwpTRPeqd4IB_PRSaT9viWnJsVzU_vLfeTfJkqVFMj-vbktPyqXOs94oEnaCzfysSzvpJ0jLe7XjaVleG6f5WcRztN7WN5CFDJNH6VUBXwK6xUrXdsQTpqsa37TB1sQgdizwiLsU4gteelk9bDkeXwPy4S8-d0ErFCACqps8owf5Bx9uRi0WsSL1d1AOsA-bi-av8RTQkLNHFdi3Z0VsL1wV-H2IcIn9-E",
 				"type": "string"
 			}
 		]

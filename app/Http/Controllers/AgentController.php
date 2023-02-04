@@ -123,6 +123,8 @@ class AgentController extends Controller
             return abort(404);
         }
         $agent = User::find($id);
+        $payments = Payment::where('user_id', $id)->orderBy('id', 'DESC')->get();
+
         $index_parcel = 1;
         $index_house = 1;
         $index_apartment = 1;
@@ -131,6 +133,7 @@ class AgentController extends Controller
             'index_parcel',
             'index_house',
             'index_apartment',
+            'payments'
         ));
     }
 

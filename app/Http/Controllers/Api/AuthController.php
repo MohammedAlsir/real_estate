@@ -55,18 +55,70 @@ class AuthController extends Controller
                 'email'     => 'required|unique:users',
                 'password'  => 'required|confirmed',
                 'phone'     => 'required',
+                'personal_document_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'commercial_license_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'trade_name' => 'max:255|required',
+                'address' => 'required|max:255',
+                'license' => 'required|max:255',
 
             ]
         );
 
         // == add new user  ==
         $user = new User();
+        $user->trade_name = $request->trade_name;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->license = $request->license;
         $user->type = 2;
         $user->status = "pending";
+
+        // For personal_document_image
+        $formFileNamepersonal_document = "personal_document_image";
+        $fileFinalName_personal_document = "";
+        if ($request->$formFileNamepersonal_document != "") {
+            // Delete file if there is a new one
+            if ($user->$formFileNamepersonal_document) {
+                File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->personal_document_image);
+            }
+            $fileFinalName_personal_document = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileNamepersonal_document)->getClientOriginalExtension();
+            $path = $this->uploadPathAgent;
+            $request->file($formFileNamepersonal_document)->move($path, $fileFinalName_personal_document);
+        }
+
+        if ($fileFinalName_personal_document != "") {
+            $user->personal_document_image = $fileFinalName_personal_document;
+        }
+        // For personal_document_image
+
+
+        // For commercial_license_image
+        $formFileName_commercial_license = "commercial_license_image";
+        $fileFinalName_commercial_license = "";
+        if ($request->$formFileName_commercial_license != "") {
+            // Delete file if there is a new one
+            if ($user->$formFileName_commercial_license) {
+                File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->commercial_license_image);
+            }
+            $fileFinalName_commercial_license = time() . rand(
+                1111,
+                9999
+            ) . '.' . $request->file($formFileName_commercial_license)->getClientOriginalExtension();
+            $path = $this->uploadPathAgent;
+            $request->file($formFileName_commercial_license)->move($path, $fileFinalName_commercial_license);
+        }
+
+        if ($fileFinalName_commercial_license != "") {
+            $user->commercial_license_image = $fileFinalName_commercial_license;
+        }
+        // For commercial_license_image
+
         $user->save();
 
         $token = $user->createToken('Token')->accessToken;
@@ -102,8 +154,7 @@ class AuthController extends Controller
                 'password'  => 'string|confirmed',
                 'phone'     => '',
 
-                'personal_document_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'commercial_license_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
                 'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
@@ -193,48 +244,7 @@ class AuthController extends Controller
         }
         // For logo
 
-        // For personal_document_image
-        $formFileNamepersonal_document = "personal_document_image";
-        $fileFinalName_personal_document = "";
-        if ($request->$formFileNamepersonal_document != "") {
-            // Delete file if there is a new one
-            if ($user->$formFileNamepersonal_document) {
-                File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->personal_document_image);
-            }
-            $fileFinalName_personal_document = time() . rand(
-                1111,
-                9999
-            ) . '.' . $request->file($formFileNamepersonal_document)->getClientOriginalExtension();
-            $path = $this->uploadPathAgent;
-            $request->file($formFileNamepersonal_document)->move($path, $fileFinalName_personal_document);
-        }
 
-        if ($fileFinalName_personal_document != "") {
-            $user->personal_document_image = $fileFinalName_personal_document;
-        }
-        // For personal_document_image
-
-
-        // For commercial_license_image
-        $formFileName_commercial_license = "commercial_license_image";
-        $fileFinalName_commercial_license = "";
-        if ($request->$formFileName_commercial_license != "") {
-            // Delete file if there is a new one
-            if ($user->$formFileName_commercial_license) {
-                File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->commercial_license_image);
-            }
-            $fileFinalName_commercial_license = time() . rand(
-                1111,
-                9999
-            ) . '.' . $request->file($formFileName_commercial_license)->getClientOriginalExtension();
-            $path = $this->uploadPathAgent;
-            $request->file($formFileName_commercial_license)->move($path, $fileFinalName_commercial_license);
-        }
-
-        if ($fileFinalName_commercial_license != "") {
-            $user->commercial_license_image = $fileFinalName_commercial_license;
-        }
-        // For commercial_license_image
 
         // save
         $user->save();

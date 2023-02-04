@@ -878,7 +878,7 @@
                                         <th>التاريخ</th>
                                         <th>صورة الاشعار</th>
                                     </tr>
-                                    @foreach ($agent->payment as $payment)
+                                    @foreach ($payments as $payment)
                                         <tr>
                                             <td>{{ $payment->created_at }}</td>
                                             <td>
