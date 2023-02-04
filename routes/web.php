@@ -53,4 +53,6 @@ Route::namespace('App\Http\Controllers')->middleware(['auth', 'admin'])->group(f
     Route::resource('hotels', 'HotelController');
 
     Route::resource('ads', 'AdsController');
-});
+
+    Route::get('reports/agents', 'ReportsController@agents')->name('agents');
+}); //end of group of route

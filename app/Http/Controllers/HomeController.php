@@ -25,11 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $agent_nonactive = User::where('type', 2)->where('status', null)->count();
+
+        $agent_nonactive = User::where('type', 2)->where(function ($query) {
+            $query->where('status', '')->orWhere('status', null);
+        })->count();
+
         $agent_active = User::where('type', 2)->where('status', 'on')->count();
+        $agent_pending = User::where('type', 2)->where('status', 'pending')->count();
         return view('home', compact(
             'agent_nonactive',
             'agent_active',
+            'agent_pending'
         ));
     }
 }
