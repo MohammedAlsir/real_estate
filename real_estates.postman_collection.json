@@ -1582,7 +1582,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "m7mda",
+											"value": "m7md",
 											"type": "default"
 										},
 										{
@@ -1606,6 +1606,18 @@
 											"type": "file",
 											"src": "/F:/BBM/n.jpg",
 											"disabled": true
+										},
+										{
+											"key": "lat",
+											"value": "11133",
+											"description": "خط الطول",
+											"type": "default"
+										},
+										{
+											"key": "long",
+											"value": "22223",
+											"description": "خط العرض",
+											"type": "default"
 										}
 									]
 								},
@@ -2728,7 +2740,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNmRkZDQ5MTM2ZDBjYTg3NTAzMjljYTk5Y2FiMGZlZTM2NzI0NzBmMmNiYTQxMDRkOTJhZWM2MDY5ZjcyMDMzNTZhZGZmN2U3YTg2ZmUyYzUiLCJpYXQiOjE2NzU1MDk3MjkuODc5NTg4LCJuYmYiOjE2NzU1MDk3MjkuODc5NTk0LCJleHAiOjE3MDcwNDU3MjkuODAzMDEsInN1YiI6IjExIiwic2NvcGVzIjpbXX0.NaFVEtGfNiF6srFDGooCX7G4AtKao5YGnQeLKL74oa3Ug-p6ewqQ73yyCwqQmV9fjg6y_kwy6O9k5lDlnjVY915m_RoJB9w5yUSPEbA_ys8_DV2o1kOSIzUxIV0wKnV14sS2KJJl2VBbioSIaXOCgHOYbWD0UFDBgQjnaP-iX_84bHp9CgpSdGL0-hmkgHljGdBYsZkHMRKuhngV-9Uva9dQkcG4x8BCKJ7nXCuV6DqYrDCuPnxXd2kLKV9roaU9eBlR6WlWjCsXnoZOEzxYArKSgP41Y4sRy2wcvNsGPTzJhGp5hsHpK20UGxnmqCsVZNtBuJkVDp0_Nba2ekd_hAWNKjUSh5yIqGYsa-dnGG7l_ZrQpDTelAsfnElkpiefGHowAymE9jaT9T5GLwalFlCa-L6RXCrRzq3S5RGOMllbubnRRda3eMepsOCnqYt890MNPw-kYbwpTRPeqd4IB_PRSaT9viWnJsVzU_vLfeTfJkqVFMj-vbktPyqXOs94oEnaCzfysSzvpJ0jLe7XjaVleG6f5WcRztN7WN5CFDJNH6VUBXwK6xUrXdsQTpqsa37TB1sQgdizwiLsU4gteelk9bDkeXwPy4S8-d0ErFCACqps8owf5Bx9uRi0WsSL1d1AOsA-bi-av8RTQkLNHFdi3Z0VsL1wV-H2IcIn9-E",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMDMyYWQ1ZjQxMGFlNWYxYTljZDZkNGNjMWRhOGU0NjAwNTY2MDI5ZjYyZTM0YTIzMDZhYjRkMTNjZDU2N2IwYTYwY2M4NmYzYmQwMGI5YjciLCJpYXQiOjE2NzU4NjExNjguNDc0MDcyLCJuYmYiOjE2NzU4NjExNjguNDc0MDc4LCJleHAiOjE3MDczOTcxNjguMjc3MzMsInN1YiI6IjEzIiwic2NvcGVzIjpbXX0.mqC7UP9z-dJvGaQ70JqMkDI112-s1teT8waBniA7FM_kH2y_vk5Mc7NTREfmMDS-Wj3gejigL4_2jRH0WzSmRaSiaFa49Gw5WDQhFQUm1uYTR0AlTKk3DHDSZtC8BWF3iS3c98KGnLBsDhRPtY0GY9GdxbBZog3vLP0TK0_dN2xeAh8nyTwgoiLay_OHtA9-bbiovh--KCo2NHp8zjSoc6GapP5V2vnjepmn2GdqNvvI_ES2FtBTAinajHv5m__h972iVc8r0BuqLLuSgUiaPeMaQhNzfjqLTR0T5jbV6ul1gbHPSO65g2S6T8EM244_eJc365DgSWA2Kd8h85_ANNLD5UfvCt_qjG1y2IzUd02vSVN6JEg-gZTz3hijxBKTz-fegEvarMsfqZCoZGwRYYnOR3-JiXfJ2Kako7job7g8JCTcjDNVrHAhfrhqexKsp8SHIvfeEdB39tEF6cpLLYa5jRTRlVkZBBX8GQNjbLjNC3xzLyZEvmYA5UjuIAiUxmzHUUFFLmcS7b1TYkHeSBhBoGOeb8Ymz0TGiL2ESnp45Lh2D2VauYNz1k3dT-XSaWG8ocO_uuF01owSuPxiLsof_bboh3fJz8kb4Q4VDYHKSZNNddsJSnRhVgER9Klq7qp7PrfIrv_ddj2fCd_0gj8l15Xdki7yqCEk26QDxW8",
 				"type": "string"
 			}
 		]

@@ -22,6 +22,8 @@ class HotelController extends Controller
         $index = 1;
         $type = 0;
 
+
+
         // >الخاصة بالوكلاء
         if ($request->hotel == 2) {
             $hotels = Hotel::where('user_id', '!=', Auth::user()->id)->orderBy('id', 'DESC')->get();

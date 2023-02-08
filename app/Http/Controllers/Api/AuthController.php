@@ -19,7 +19,6 @@ class AuthController extends Controller
     private $uploadPathLogo = "uploads/agents/logo/";
     private $uploadPathAgent = "uploads/agents/";
 
-
     /*
         == Login function ==
         == Receive email & password  ==
@@ -60,7 +59,6 @@ class AuthController extends Controller
                 'trade_name' => 'max:255|required',
                 'address' => 'required|max:255',
                 'license' => 'required|max:255',
-
             ]
         );
 
@@ -84,6 +82,7 @@ class AuthController extends Controller
             if ($user->$formFileNamepersonal_document) {
                 File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->personal_document_image);
             }
+
             $fileFinalName_personal_document = time() . rand(
                 1111,
                 9999
@@ -95,8 +94,8 @@ class AuthController extends Controller
         if ($fileFinalName_personal_document != "") {
             $user->personal_document_image = $fileFinalName_personal_document;
         }
-        // For personal_document_image
 
+        // For personal_document_image
 
         // For commercial_license_image
         $formFileName_commercial_license = "commercial_license_image";
@@ -106,6 +105,7 @@ class AuthController extends Controller
             if ($user->$formFileName_commercial_license) {
                 File::delete($this->uploadPathAgent . User::find(Auth::user()->id)->commercial_license_image);
             }
+
             $fileFinalName_commercial_license = time() . rand(
                 1111,
                 9999
@@ -117,6 +117,7 @@ class AuthController extends Controller
         if ($fileFinalName_commercial_license != "") {
             $user->commercial_license_image = $fileFinalName_commercial_license;
         }
+
         // For commercial_license_image
 
         $user->save();
@@ -125,7 +126,6 @@ class AuthController extends Controller
         // == return user data with token ==
         return $this->returnData('user', $user, $token);
     } // end of register
-
 
     // Show Profile
     public function get_profile()
@@ -136,8 +136,6 @@ class AuthController extends Controller
         else
             return $this->returnMessage(false, 'هذا المستخدم غير موجود', 200);
     }
-
-
 
     // Edit Profile
     public function edit_profile(Request $request)
@@ -154,7 +152,6 @@ class AuthController extends Controller
                 'password'  => 'string|confirmed',
                 'phone'     => '',
 
-
                 'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
@@ -166,8 +163,6 @@ class AuthController extends Controller
                 'personal_email' => 'max:255',
                 'twitter_account' => 'max:255',
                 'facebook_account' => 'max:255',
-
-
             ]
         );
 
@@ -200,7 +195,10 @@ class AuthController extends Controller
         if ($request->facebook_account)
             $user->facebook_account = $request->facebook_account;
 
-
+        if ($request->long)
+            $user->long = $request->long;
+        if ($request->lat)
+            $user->lat = $request->lat;
 
         // For Photo
         $formFileName = "photo";
@@ -210,6 +208,7 @@ class AuthController extends Controller
             if ($user->$formFileName) {
                 File::delete($this->uploadPath . User::find(Auth::user()->id)->photo);
             }
+
             $fileFinalName = time() . rand(
                 1111,
                 9999
@@ -221,6 +220,7 @@ class AuthController extends Controller
         if ($fileFinalName != "") {
             $user->photo = $fileFinalName;
         }
+
         // For Photo
 
         // For logo
@@ -231,6 +231,7 @@ class AuthController extends Controller
             if ($user->$formFileNameLogo) {
                 File::delete($this->uploadPathLogo . User::find(Auth::user()->id)->logo);
             }
+
             $fileFinalNameLogo = time() . rand(
                 1111,
                 9999
@@ -242,9 +243,8 @@ class AuthController extends Controller
         if ($fileFinalNameLogo != "") {
             $user->logo = $fileFinalNameLogo;
         }
+
         // For logo
-
-
 
         // save
         $user->save();
